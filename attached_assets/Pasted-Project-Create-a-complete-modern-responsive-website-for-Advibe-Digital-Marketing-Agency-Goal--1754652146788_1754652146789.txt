@@ -1,0 +1,118 @@
+Project: Create a complete, modern, responsive website for Advibe – Digital Marketing Agency.
+Goal: Showcase Advibe’s services, plans, and expertise, converting visitors into leads and clients.
+
+Brand Reference: Use the attached Advibe logo for visual inspiration. Primary colors must be picked from the logo’s palette:
+
+Primary Gradient: #F9D4E7 → #F1A6C9 → #A2C4F5
+
+Accent Colors: Pink #F47A9B, Blue #85BCEB
+
+Text Color: Dark charcoal #1A1A1A
+
+Use gradients in hero sections and buttons. Buttons should have a pink-to-blue gradient hover effect.
+
+Font: Modern, clean sans-serif like Poppins or Inter.
+
+Pages Required:
+
+Home Page
+
+Hero Section:
+
+Background gradient.
+
+Tagline: “Vibe Your Brand. Grow Your Reach.”
+
+Subtext: We help brands shine with creative content, targeted ads, and growth strategies.
+
+CTA Buttons: Get a Free Consultation | View Plans
+
+About Advibe (Preview): Short 2–3 lines with “Read More” button.
+
+Our Services Snapshot: 6 cards – Social Media Management, Performance Marketing, Branding & Content Creation, Website Development & SEO, Strategy & Consulting, Data Tracking & Reporting.
+
+Plans Overview: Silver, Gold, Diamond (1–2 line teaser each) with “View Details” buttons.
+
+Client Testimonials Section (3–4 reviews, placeholder data).
+
+Call-to-Action Banner: Let’s Vibe Your Brand Today! with contact button.
+
+About Us Page
+
+Full section from PDF “What is Advibe?” + mission, vision, and why choose us (use bullet points for clarity).
+
+Add a photo/banner of creative marketing in action.
+
+Services Page (SEO-friendly individual descriptions)
+
+Social Media Management – description from PDF.
+
+Performance Marketing – description from PDF.
+
+Branding & Content Creation – description from PDF.
+
+Website Development & SEO – description from PDF.
+
+Strategy & Consulting – description from PDF.
+
+Data Tracking & Reporting – description from PDF.
+
+Plans & Pricing Page
+
+Silver Plan – (from PDF): 8 Posts, 2 Reels, 8 Stories, Instagram/Facebook handling, flyers, reel edits, boosting, 250 pamphlets, 3 banners – ₹15,000/month.
+
+Gold Plan – (from PDF): 12 Posts, 4 Reels, 12 Stories, Insta/Facebook/LinkedIn handling, GMB, leads growth, 350 pamphlets, 5 banners – ₹21,000/month.
+
+Diamond Plan – (from PDF): 12 Posts + 3 LinkedIn, 8 Reels, 16 Stories, Insta/Facebook/LinkedIn/Site/Google Ads, SEO, 500 pamphlets, 7 banners – ₹36,000/month.
+
+Include Comparison Table for all three plans.
+
+“Subscribe Now” or “Book This Plan” buttons.
+
+Contact Us Page
+
+Contact form (Name, Email, Phone, Message).
+
+Display phone, email, office address.
+
+Google Maps integration.
+
+Inquiry Page
+
+Short form: Name, Email, Phone, Business Name, Message.
+
+Dropdown to select Plan of Interest (Silver / Gold / Diamond / Custom).
+
+Blog Page (Optional but highly recommended)
+
+Post previews: marketing tips, case studies, trends.
+
+Design Requirements:
+
+Fully responsive for desktop, tablet, and mobile.
+
+Smooth fade-in animations for sections.
+
+Hover effects for buttons and images.
+
+SEO-friendly structure with H1/H2 headings.
+
+Fast loading speed (optimize images & code).
+
+Tone & Copy Style:
+
+Friendly yet professional.
+
+Focus on results, growth, and creativity.
+
+Call-to-actions on every page.
+
+Final Deliverable:
+
+Fully coded responsive website (HTML/CSS/JS or WordPress Elementor).
+
+All text and images filled in (no lorem ipsum).
+
+Pages linked correctly.
+
+Matching Advibe’s brand look & feel.
