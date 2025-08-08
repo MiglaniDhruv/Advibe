@@ -4,11 +4,11 @@ import advibeLogoPath from "@assets/WhatsApp Image 2025-07-29 at 12.52.24_cd622b
 
 export default function Footer() {
   return (
-    <footer className="bg-advibe-dark text-white py-16 border-t-4 border-advibe-pink">
+    <footer className="bg-advibe-dark text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="fade-in">
+          <div>
             <div className="flex items-center mb-6">
               <img 
                 src={advibeLogoPath} 
@@ -48,7 +48,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="fade-in">
+          <div>
             <h4 className="text-xl font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
@@ -85,7 +85,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div className="fade-in">
+          <div>
             <h4 className="text-xl font-semibold mb-6">Our Services</h4>
             <ul className="space-y-3">
               <li>
@@ -110,7 +110,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="fade-in">
+          <div>
             <h4 className="text-xl font-semibold mb-6">Contact Info</h4>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
@@ -135,7 +135,7 @@ export default function Footer() {
 
         <hr className="border-gray-700 my-12" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center fade-in">
+        <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 mb-4 md:mb-0">© 2024 Advibe. All rights reserved.</p>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-400 hover:text-advibe-pink transition-all">
