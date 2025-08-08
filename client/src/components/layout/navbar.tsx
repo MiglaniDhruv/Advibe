@@ -28,13 +28,12 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center">
             <img 
               src={advibeLogoPath} 
               alt="Advibe Digital Marketing Agency Logo" 
-              className="w-10 h-10 rounded-full object-cover"
+              className="w-14 h-14 rounded-full object-cover"
             />
-            <span className="text-xl font-bold gradient-text">Advibe</span>
           </Link>
 
           {/* Desktop Menu */}

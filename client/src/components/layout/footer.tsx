@@ -9,13 +9,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="fade-in">
-            <div className="flex items-center space-x-2 mb-6">
+            <div className="flex items-center mb-6">
               <img 
                 src={advibeLogoPath} 
                 alt="Advibe Digital Marketing Agency Logo" 
-                className="w-10 h-10 rounded-full object-cover"
+                className="w-16 h-16 rounded-full object-cover"
               />
-              <span className="text-xl font-bold">Advibe</span>
             </div>
             <p className="text-gray-300 leading-relaxed mb-6">
               Transform your brand with creative digital marketing solutions that drive real results and sustainable growth.
