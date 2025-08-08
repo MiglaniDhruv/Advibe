@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import advibeLogoPath from "@assets/WhatsApp Image 2025-07-29 at 12.52.24_cd622bf7_1754653488876.jpg";
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -28,9 +29,11 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">A</span>
-            </div>
+            <img 
+              src={advibeLogoPath} 
+              alt="Advibe Digital Marketing Agency Logo" 
+              className="w-10 h-10 rounded-full object-cover"
+            />
             <span className="text-xl font-bold gradient-text">Advibe</span>
           </Link>
 
