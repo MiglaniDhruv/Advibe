@@ -32,7 +32,7 @@ export default function Navbar() {
             <img 
               src={advibeLogoPath} 
               alt="Advibe Digital Marketing Agency Logo" 
-              className="w-20 h-20 rounded-full object-cover"
+              className="w-12 h-12 rounded-full object-cover"
             />
           </Link>
 
