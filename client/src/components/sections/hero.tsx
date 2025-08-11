@@ -20,7 +20,7 @@ export default function Hero() {
               <br />
               <span className="gradient-text">Grow Your Reach.</span>
             </h1>
-            <p className="text-xl text-advibe-dark/80 mb-8 leading-relaxed">
+            <p className="text-xl text-white mb-8 leading-relaxed">
               We help brands shine with creative content, targeted ads, and growth strategies that deliver real results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
