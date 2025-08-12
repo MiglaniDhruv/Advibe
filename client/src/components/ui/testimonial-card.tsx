@@ -33,14 +33,14 @@ export default function TestimonialCard({
           ))}
         </div>
       </div>
-      <p className="text-advibe-dark/80 mb-6 italic">"{content}"</p>
+      <p className="text-gray-700 mb-6 italic">"{content}"</p>
       <div className="flex items-center">
         <div className="w-12 h-12 service-icon rounded-full flex items-center justify-center mr-4">
           <span className="text-white font-semibold">{avatar}</span>
         </div>
         <div>
-          <p className="font-semibold text-advibe-dark">{name}</p>
-          <p className="text-sm text-advibe-dark/60">{company}</p>
+          <p className="font-semibold text-black">{name}</p>
+          <p className="text-sm text-gray-500">{company}</p>
         </div>
       </div>
     </div>

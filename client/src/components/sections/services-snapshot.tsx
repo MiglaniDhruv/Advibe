@@ -46,7 +46,7 @@ export default function ServicesSnapshot() {
   ];
 
   return (
-    <section className="py-20">
+    <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div
           ref={elementRef}
@@ -55,7 +55,7 @@ export default function ServicesSnapshot() {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-advibe-dark mb-4">Our Services</h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
             Comprehensive digital marketing solutions tailored to elevate your brand and drive measurable growth.
           </p>
         </div>
