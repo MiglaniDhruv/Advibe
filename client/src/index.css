@@ -25,14 +25,14 @@
   --input: hsl(200, 23.0769%, 97.4510%);
   --ring: hsl(202.8169, 89.1213%, 53.1373%);
 
-  /* Professional Pink & Black Colors */
-  --advibe-primary-light: hsl(330, 50%, 95%);
-  --advibe-primary-mid: hsl(330, 60%, 85%);
-  --advibe-primary-blue: hsl(0, 0%, 10%);
-  --advibe-accent-pink: hsl(330, 85%, 60%);
-  --advibe-accent-blue: hsl(330, 70%, 45%);
-  --advibe-text-dark: hsl(0, 0%, 10%);
-  --advibe-gradient: linear-gradient(135deg, hsl(330, 50%, 95%) 0%, hsl(330, 60%, 85%) 50%, hsl(330, 85%, 60%) 100%);
+  /* Light Pink & Black Colors */
+  --advibe-primary-light: hsl(330, 30%, 97%);
+  --advibe-primary-mid: hsl(330, 40%, 92%);
+  --advibe-primary-blue: hsl(0, 0%, 15%);
+  --advibe-accent-pink: hsl(330, 60%, 80%);
+  --advibe-accent-blue: hsl(330, 50%, 70%);
+  --advibe-text-dark: hsl(0, 0%, 15%);
+  --advibe-gradient: linear-gradient(135deg, hsl(330, 30%, 97%) 0%, hsl(330, 40%, 92%) 50%, hsl(330, 60%, 80%) 100%);
 
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-serif: Georgia, serif;
@@ -61,14 +61,14 @@
   --input: hsl(207.6923, 27.6596%, 18.4314%);
   --ring: hsl(202.8169, 89.1213%, 53.1373%);
 
-  /* Dark Mode Pink & Black Colors */
-  --advibe-primary-light: hsl(330, 30%, 20%);
-  --advibe-primary-mid: hsl(330, 40%, 15%);
-  --advibe-primary-blue: hsl(330, 85%, 75%);
-  --advibe-accent-pink: hsl(330, 85%, 70%);
-  --advibe-accent-blue: hsl(330, 75%, 60%);
+  /* Dark Mode Light Pink & Black Colors */
+  --advibe-primary-light: hsl(330, 20%, 25%);
+  --advibe-primary-mid: hsl(330, 25%, 20%);
+  --advibe-primary-blue: hsl(330, 60%, 85%);
+  --advibe-accent-pink: hsl(330, 50%, 75%);
+  --advibe-accent-blue: hsl(330, 40%, 65%);
   --advibe-text-dark: hsl(0, 0%, 90%);
-  --advibe-gradient: linear-gradient(135deg, hsl(330, 30%, 20%) 0%, hsl(330, 40%, 15%) 50%, hsl(330, 85%, 70%) 100%);
+  --advibe-gradient: linear-gradient(135deg, hsl(330, 20%, 25%) 0%, hsl(330, 25%, 20%) 50%, hsl(330, 50%, 75%) 100%);
 }
 
 @layer base {
