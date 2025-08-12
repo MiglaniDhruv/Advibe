@@ -23,8 +23,8 @@ export default function Home() {
               isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-advibe-light mb-6">About Advibe</h2>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <h2 className="text-3xl md:text-4xl font-bold text-advibe-dark mb-6">About Advibe</h2>
+            <p className="text-lg text-advibe-dark/80 mb-8 leading-relaxed">
               Advibe is a dynamic digital marketing agency that transforms brands through innovative strategies, creative content, and data-driven campaigns. We believe every brand has a unique vibe that deserves to be amplified.
             </p>
             <Link href="/about">

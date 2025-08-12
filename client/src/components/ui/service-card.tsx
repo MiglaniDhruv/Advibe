@@ -22,8 +22,8 @@ export default function ServiceCard({ icon, title, description, delay = 0 }: Ser
       <div className="w-16 h-16 service-icon rounded-2xl flex items-center justify-center mb-6 text-white">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold text-black mb-4">{title}</h3>
-      <p className="text-gray-600 leading-relaxed">{description}</p>
+      <h3 className="text-xl font-semibold text-advibe-dark mb-4">{title}</h3>
+      <p className="text-advibe-dark/70 leading-relaxed">{description}</p>
     </div>
   );
 }

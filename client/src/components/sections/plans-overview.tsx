@@ -71,8 +71,8 @@ export default function PlansOverview() {
             isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-advibe-light mb-4">Our Plans</h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-advibe-dark mb-4">Our Plans</h2>
+          <p className="text-lg text-advibe-dark/70 max-w-2xl mx-auto">
             Flexible packages designed to meet your business needs and budget.
           </p>
         </div>
