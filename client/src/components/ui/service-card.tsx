@@ -14,12 +14,12 @@ export default function ServiceCard({ icon, title, description, delay = 0 }: Ser
   return (
     <div
       ref={elementRef}
-      className={`bg-white p-8 rounded-2xl shadow-lg card-hover transition-all duration-700 ${
-        isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      className={`bg-white p-8 rounded-2xl shadow-lg card-hover transition-all duration-400 hover:border border-blue-500 ${
+        isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8" 
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="w-16 h-16 service-icon rounded-2xl flex items-center justify-center mb-6 text-white">
+      <div className="w-16 h-16 service-icon rounded-2xl flex items-center justify-center mb-6 text-white ">
         {icon}
       </div>
       <h3 className="text-xl font-semibold text-advibe-dark mb-4">{title}</h3>
