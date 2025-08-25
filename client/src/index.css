@@ -39,6 +39,94 @@
   --font-mono: Menlo, monospace;
   --radius: 1rem;
 }
+/* Up-Down Motion */
+@keyframes float-updown {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Side-to-Side Motion */
+@keyframes float-sideways {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+/* Circular Motion */
+@keyframes float-circle {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(15px, -15px);
+  }
+
+  50% {
+    transform: translate(30px, 0);
+  }
+
+  75% {
+    transform: translate(15px, 15px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Diamond / Diagonal Motion */
+@keyframes float-diamond {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(15px, -15px);
+  }
+
+  50% {
+    transform: translate(0, -30px);
+  }
+
+  75% {
+    transform: translate(-15px, -15px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Tailwind Utility Hooks */
+.animate-float-updown {
+  animation: float-updown 6s ease-in-out infinite;
+}
+
+.animate-float-sideways {
+  animation: float-sideways 7s ease-in-out infinite;
+}
+
+.animate-float-circle {
+  animation: float-circle 10s linear infinite;
+}
+
+.animate-float-diamond {
+  animation: float-diamond 8s ease-in-out infinite;
+}
 
 .dark {
   --background: hsl(0, 0%, 0%);

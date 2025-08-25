@@ -26,7 +26,9 @@ export default function Contact() {
     mutationFn: async (data: typeof formData) => {
       const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error("Failed to send message");
@@ -34,7 +36,13 @@ export default function Contact() {
     },
     onSuccess: () => {
       toast.success("Message sent successfully!");
-      setFormData({ name: "", email: "", phone: "", reason: "", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        reason: "",
+        message: "",
+      });
     },
     onError: () => {
       toast.error("Failed to send message. Try again later.");
@@ -42,10 +50,15 @@ export default function Contact() {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -92,11 +105,13 @@ export default function Contact() {
               <p className="text-gray-600 mb-6">
                 Have a question or business inquiry? We’d love to hear from you.
               </p>
+
               <div className="space-y-4">
-                <p className="text-lg">📞 +91 98765 43210</p>
-                <p className="text-lg">✉️ info@advibe.com</p>
-                <p className="text-lg">📍 Ahmedabad, Gujarat, India</p>
+                <p className="text-lg">📞 +91 75749 68609</p>
+                <p className="text-lg">✉️ connect@advibe.club</p>
+                <p className="text-lg">📍 Surat, Gujarat, India</p>
               </div>
+
               <div className="flex gap-4 mt-6">
                 <a href="#" className="text-advibe-pink hover:underline">
                   Twitter
@@ -116,7 +131,6 @@ export default function Contact() {
                 <h3 className="text-2xl font-bold text-advibe-dark mb-6">
                   Send Us a Message
                 </h3>
-
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>

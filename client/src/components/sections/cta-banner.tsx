@@ -15,7 +15,7 @@ export default function CTABanner() {
           }`}
         >
           <h2 className="text-3xl md:text-5xl font-bold text-advibe-dark mb-6">
-            Let's Vibe Your Brand Today!
+            Let's Vibe With Your Brand Today!
           </h2>
           <p className="text-xl text-advibe-dark/80 mb-8 max-w-2xl mx-auto">
             Ready to transform your digital presence and accelerate your growth? Let's create something amazing together.

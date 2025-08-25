@@ -14,32 +14,50 @@ export default function ServicesSnapshot() {
 
   const services = [
     {
-      icon: <Hash className="text-2xl" />,
+      icon: (
+    <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB]">
+      <Hash className="text-white text-2xl" />
+    </div>),
       title: "Social Media Management",
       description: "Strategic content creation and community management to build your brand presence across all social platforms.",
     },
     {
-      icon: <TrendingUp className="text-2xl" />,
+      icon: (
+    <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB]">
+      <TrendingUp className="text-white text-2xl" />
+    </div>),
       title: "Performance Marketing",
       description: "Data-driven advertising campaigns that deliver measurable ROI across Google Ads, Facebook, and other platforms.",
     },
     {
-      icon: <Palette className="text-2xl" />,
+      icon: (
+    <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB]">
+      <Palette className="text-white text-2xl" />
+    </div>),
       title: "Branding & Content Creation",
       description: "Compelling visual identity and content that tells your brand story and connects with your target audience.",
     },
     {
-      icon: <Code className="text-2xl" />,
+      icon: (
+    <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB]">
+      <Code className="text-white text-2xl" />
+    </div>),
       title: "Website Development & SEO",
       description: "Custom websites optimized for performance, user experience, and search engine visibility.",
     },
     {
-      icon: <Lightbulb className="text-2xl" />,
+      icon: (
+    <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB]">
+      <Lightbulb className="text-white text-2xl" />
+    </div>),
       title: "Strategy & Consulting",
       description: "Expert guidance and strategic planning to align your marketing efforts with business objectives.",
     },
     {
-      icon: <BarChart3 className="text-2xl" />,
+      icon: (
+    <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB]">
+      <BarChart3 className="text-white text-2xl" />
+    </div>),
       title: "Data Tracking & Reporting",
       description: "Comprehensive analytics and transparent reporting to measure success and optimize performance.",
     },

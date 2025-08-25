@@ -17,7 +17,11 @@ export default function Services() {
 
   const services = [
     {
-      icon: <Hash className="text-2xl" />,
+      icon: (
+    <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB]">
+      <Hash className="text-white text-2xl" />
+    </div>
+  ),
       title: "Social Media Management",
       description: "Transform your social media presence with our comprehensive management services. We create engaging content, build authentic communities, and drive meaningful interactions across all major platforms including Instagram, Facebook, Twitter, LinkedIn, and TikTok.",
       features: [
@@ -30,7 +34,11 @@ export default function Services() {
       alt: "Social media marketing dashboard with analytics and engagement metrics",
     },
     {
-      icon: <TrendingUp className="text-2xl" />,
+      icon: (
+    <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB]">
+      <TrendingUp className="text-white text-2xl" />
+    </div>
+  ),
       title: "Performance Marketing",
       description: "Drive measurable results with our data-driven performance marketing strategies. We create and optimize advertising campaigns across Google Ads, Facebook Ads, Instagram Ads, and other platforms to maximize your ROI and achieve your business objectives.",
       features: [
@@ -43,7 +51,11 @@ export default function Services() {
       alt: "Performance marketing analytics dashboard showing ROI and campaign metrics",
     },
     {
-      icon: <Palette className="text-2xl" />,
+      icon: (
+    <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB]">
+      <Palette className="text-white text-2xl" />
+    </div>
+  ), 
       title: "Branding & Content Creation",
       description: "Build a distinctive brand identity that resonates with your target audience. Our creative team develops compelling visual identities, engaging content, and cohesive brand experiences that tell your unique story and differentiate you from competitors.",
       features: [
@@ -56,7 +68,11 @@ export default function Services() {
       alt: "Creative designer working on brand identity and visual content creation",
     },
     {
-      icon: <Code className="text-2xl" />,
+      icon: (
+    <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB]">
+      <Code className="text-white text-2xl" />
+    </div>
+  ),
       title: "Website Development & SEO",
       description: "Create powerful, user-friendly websites that drive conversions and rank well in search engines. Our development team builds responsive, fast-loading websites optimized for both user experience and search engine visibility.",
       features: [
@@ -69,7 +85,11 @@ export default function Services() {
       alt: "Web developer creating responsive websites with SEO optimization",
     },
     {
-      icon: <Lightbulb className="text-2xl" />,
+      icon: (
+    <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB]">
+      <Lightbulb className="text-white text-2xl" />
+    </div>
+  ),
       title: "Strategy & Consulting",
       description: "Navigate the complex digital landscape with expert guidance and strategic planning. Our consultants work closely with your team to develop comprehensive marketing strategies aligned with your business goals and market opportunities.",
       features: [
@@ -82,7 +102,11 @@ export default function Services() {
       alt: "Strategic marketing consultation meeting with business experts",
     },
     {
-      icon: <BarChart3 className="text-2xl" />,
+      icon: (
+    <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB]">
+      <BarChart3 className="text-white text-2xl" />
+    </div>
+  ),
       title: "Data Tracking & Reporting",
       description: "Make informed decisions with comprehensive analytics and transparent reporting. We provide detailed insights into campaign performance, user behavior, and ROI metrics to help you understand what's working and optimize for better results.",
       features: [

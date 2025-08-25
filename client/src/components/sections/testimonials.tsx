@@ -25,6 +25,13 @@ const testimonials = [
       "Working with Advibe has been a game-changer for our business. Their strategic approach to digital marketing helped us achieve a 250% increase in online sales within 6 months.",
     avatar: "AS",
   },
+  {
+    name: "Vishwa Chaudhari",
+    company: "Founder, Agariss IT",
+    content:
+      "Advibe played a vital role in helping Agariss IT uncover new possibilities. Their guidance and expertise gave us the clarity and direction we needed to scale faster and with confidence.",
+    avatar: "VC",
+  },
 ];
 
 // Duplicate array for seamless loop
