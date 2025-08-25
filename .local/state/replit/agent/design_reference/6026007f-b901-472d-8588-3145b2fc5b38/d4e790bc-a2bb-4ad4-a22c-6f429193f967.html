@@ -1,0 +1,2668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advibe - Digital Marketing Agency | Vibe Your Brand. Grow Your Reach.</title>
+    <meta name="description" content="Advibe helps brands shine with creative content, targeted ads, and growth strategies. Professional digital marketing services including social media management, SEO, and performance marketing.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'advibe-pink': '#F47A9B',
+                    'advibe-blue': '#85BCEB',
+                    'advibe-dark': '#1A1A1A',
+                    'gradient-start': '#F9D4E7',
+                    'gradient-mid': '#F1A6C9',
+                    'gradient-end': '#A2C4F5'
+                },
+                fontFamily: {
+                    'poppins': ['Poppins', 'sans-serif']
+                },
+                backgroundImage: {
+                    'advibe-gradient': 'linear-gradient(135deg, #F9D4E7 0%, #F1A6C9 50%, #A2C4F5 100%)',
+                    'button-gradient': 'linear-gradient(135deg, #F47A9B 0%, #85BCEB 100%)'
+                }
+            }
+        }
+    };
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .gradient-hover {
+            background: linear-gradient(135deg, #F47A9B 0%, #85BCEB 100%);
+            background-size: 200% 200%;
+            transition: all 0.3s ease;
+        }
+        
+        .gradient-hover:hover {
+            background-position: right center;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(244, 122, 155, 0.3);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .page-section {
+            display: none;
+        }
+        
+        .page-section.active {
+            display: block;
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, #F47A9B 0%, #85BCEB 100%);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            
+            .mobile-menu.open {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-poppins bg-white text-advibe-dark">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-advibe-gradient rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">A</span>
+                    </div>
+                    <span class="text-xl font-bold text-advibe-dark">Advibe</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <button onclick="showPage('home')" class="nav-link px-3 py-2 rounded-lg transition-all hover:text-advibe-pink active">Home</button>
+                    <button onclick="showPage('about')" class="nav-link px-3 py-2 rounded-lg transition-all hover:text-advibe-pink">About</button>
+                    <button onclick="showPage('services')" class="nav-link px-3 py-2 rounded-lg transition-all hover:text-advibe-pink">Services</button>
+                    <button onclick="showPage('plans')" class="nav-link px-3 py-2 rounded-lg transition-all hover:text-advibe-pink">Plans & Pricing</button>
+                    <button onclick="showPage('blog')" class="nav-link px-3 py-2 rounded-lg transition-all hover:text-advibe-pink">Blog</button>
+                    <button onclick="showPage('contact')" class="nav-link px-3 py-2 rounded-lg transition-all hover:text-advibe-pink">Contact</button>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <button onclick="showPage('inquiry')" class="gradient-hover px-6 py-2 rounded-full text-white font-medium">
+                        Get Free Consultation
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-16 left-0 w-full h-screen bg-white shadow-lg">
+            <div class="flex flex-col p-4 space-y-4">
+                <button onclick="showPage('home'); toggleMobileMenu()" class="nav-link text-left px-4 py-3 rounded-lg transition-all active">Home</button>
+                <button onclick="showPage('about'); toggleMobileMenu()" class="nav-link text-left px-4 py-3 rounded-lg transition-all">About</button>
+                <button onclick="showPage('services'); toggleMobileMenu()" class="nav-link text-left px-4 py-3 rounded-lg transition-all">Services</button>
+                <button onclick="showPage('plans'); toggleMobileMenu()" class="nav-link text-left px-4 py-3 rounded-lg transition-all">Plans & Pricing</button>
+                <button onclick="showPage('blog'); toggleMobileMenu()" class="nav-link text-left px-4 py-3 rounded-lg transition-all">Blog</button>
+                <button onclick="showPage('contact'); toggleMobileMenu()" class="nav-link text-left px-4 py-3 rounded-lg transition-all">Contact</button>
+                <button onclick="showPage('inquiry'); toggleMobileMenu()" class="gradient-hover px-6 py-3 rounded-lg text-white font-medium mt-4">
+                    Get Free Consultation
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- HOME PAGE -->
+        <section id="home" class="page-section active">
+            <!-- Hero Section -->
+            <section class="bg-advibe-gradient py-20 md:py-32">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-col lg:flex-row items-center justify-between">
+                        <div class="lg:w-1/2 mb-8 lg:mb-0 fade-in">
+                            <h1 class="text-4xl md:text-6xl font-bold text-advibe-dark leading-tight mb-6">
+                                Vibe Your Brand.<br>
+                                <span class="text-advibe-pink">Grow Your Reach.</span>
+                            </h1>
+                            <p class="text-xl text-advibe-dark/80 mb-8 leading-relaxed">
+                                We help brands shine with creative content, targeted ads, and growth strategies that deliver real results.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <button onclick="showPage('inquiry')" class="gradient-hover px-8 py-4 rounded-full text-white font-semibold text-lg shadow-lg">
+                                    Get a Free Consultation
+                                </button>
+                                <button onclick="showPage('plans')" class="px-8 py-4 rounded-full border-2 border-advibe-pink text-advibe-pink font-semibold text-lg hover:bg-advibe-pink hover:text-white transition-all">
+                                    View Plans
+                                </button>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 fade-in">
+                            <!-- Modern marketing illustration with team collaborating on digital strategy -->
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Digital marketing team collaborating on creative strategy" class="rounded-2xl shadow-2xl w-full h-auto" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Advibe Preview -->
+            <section class="py-16 bg-gray-50">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-4xl mx-auto text-center fade-in">
+                        <h2 class="text-3xl md:text-4xl font-bold text-advibe-dark mb-6">About Advibe</h2>
+                        <p class="text-lg text-advibe-dark/80 mb-8 leading-relaxed">
+                            Advibe is a dynamic digital marketing agency that transforms brands through innovative strategies, creative content, and data-driven campaigns. We believe every brand has a unique vibe that deserves to be amplified.
+                        </p>
+                        <button onclick="showPage('about')" class="gradient-hover px-8 py-3 rounded-full text-white font-semibold">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Snapshot -->
+            <section class="py-20">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="text-3xl md:text-4xl font-bold text-advibe-dark mb-4">Our Services</h2>
+                        <p class="text-lg text-advibe-dark/70 max-w-2xl mx-auto">
+                            Comprehensive digital marketing solutions tailored to elevate your brand and drive measurable growth.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="service-card bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 fade-in">
+                            <div class="w-16 h-16 bg-gradient-to-br from-advibe-pink to-advibe-blue rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fab fa-instagram text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-advibe-dark mb-4">Social Media Management</h3>
+                            <p class="text-advibe-dark/70 leading-relaxed">Strategic content creation and community management to build your brand presence across all social platforms.</p>
+                        </div>
+                        
+                        <div class="service-card bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 fade-in">
+                            <div class="w-16 h-16 bg-gradient-to-br from-advibe-pink to-advibe-blue rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-chart-line text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-advibe-dark mb-4">Performance Marketing</h3>
+                            <p class="text-advibe-dark/70 leading-relaxed">Data-driven advertising campaigns that deliver measurable ROI across Google Ads, Facebook, and other platforms.</p>
+                        </div>
+                        
+                        <div class="service-card bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 fade-in">
+                            <div class="w-16 h-16 bg-gradient-to-br from-advibe-pink to-advibe-blue rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-palette text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-advibe-dark mb-4">Branding & Content Creation</h3>
+                            <p class="text-advibe-dark/70 leading-relaxed">Compelling visual identity and content that tells your brand story and connects with your target audience.</p>
+                        </div>
+                        
+                        <div class="service-card bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 fade-in">
+                            <div class="w-16 h-16 bg-gradient-to-br from-advibe-pink to-advibe-blue rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-code text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-advibe-dark mb-4">Website Development & SEO</h3>
+                            <p class="text-advibe-dark/70 leading-relaxed">Custom websites optimized for performance, user experience, and search engine visibility.</p>
+                        </div>
+                        
+                        <div class="service-card bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 fade-in">
+                            <div class="w-16 h-16 bg-gradient-to-br from-advibe-pink to-advibe-blue rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-lightbulb text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-advibe-dark mb-4">Strategy & Consulting</h3>
+                            <p class="text-advibe-dark/70 leading-relaxed">Expert guidance and strategic planning to align your marketing efforts with business objectives.</p>
+                        </div>
+                        
+                        <div class="service-card bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 fade-in">
+                            <div class="w-16 h-16 bg-gradient-to-br from-advibe-pink to-advibe-blue rounded-2xl flex items-center justify-center mb-6">
+                                <i class="fas fa-chart-bar text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-advibe-dark mb-4">Data Tracking & Reporting</h3>
+                            <p class="text-advibe-dark/70 leading-relaxed">Comprehensive analytics and transparent reporting to measure success and optimize performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Plans Overview -->
+            <section class="py-20 bg-gray-50">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="text-3xl md:text-4xl font-bold text-advibe-dark mb-4">Our Plans</h2>
+                        <p class="text-lg text-advibe-dark/70 max-w-2xl mx-auto">
+                            Flexible packages designed to meet your business needs and budget.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl fade-in">
+                            <div class="text-center mb-6">
+                                <h3 class="text-2xl font-bold text-advibe-dark mb-2">Silver Plan</h3>
+                                <div class="text-3xl font-bold text-advibe-pink">₹15,000<span class="text-lg text-advibe-dark/60">/month</span></div>
+                            </div>
+                            <p class="text-advibe-dark/70 mb-6">Perfect for startups and small businesses looking to establish their digital presence.</p>
+                            <button onclick="showPage('plans')" class="w-full py-3 border-2 border-advibe-pink text-advibe-pink rounded-full font-semibold hover:bg-advibe-pink hover:text-white transition-all">
+                                View Details
+                            </button>
+                        </div>
+                        
+                        <div class="bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl fade-in relative">
+                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                <span class="bg-gradient-to-r from-advibe-pink to-advibe-blue text-white px-4 py-2 rounded-full text-sm font-semibold">Most Popular</span>
+                            </div>
+                            <div class="text-center mb-6">
+                                <h3 class="text-2xl font-bold text-advibe-dark mb-2">Gold Plan</h3>
+                                <div class="text-3xl font-bold text-advibe-pink">₹21,000<span class="text-lg text-advibe-dark/60">/month</span></div>
+                            </div>
+                            <p class="text-advibe-dark/70 mb-6">Ideal for growing businesses ready to scale their marketing efforts and reach.</p>
+                            <button onclick="showPage('plans')" class="w-full gradient-hover py-3 text-white rounded-full font-semibold">
+                                View Details
+                            </button>
+                        </div>
+                        
+                        <div class="bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl fade-in">
+                            <div class="text-center mb-6">
+                                <h3 class="text-2xl font-bold text-advibe-dark mb-2">Diamond Plan</h3>
+                                <div class="text-3xl font-bold text-advibe-pink">₹36,000<span class="text-lg text-advibe-dark/60">/month</span></div>
+                            </div>
+                            <p class="text-advibe-dark/70 mb-6">Comprehensive solution for established businesses seeking premium marketing services.</p>
+                            <button onclick="showPage('plans')" class="w-full py-3 border-2 border-advibe-pink text-advibe-pink rounded-full font-semibold hover:bg-advibe-pink hover:text-white transition-all">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Client Testimonials -->
+            <section class="py-20">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="text-3xl md:text-4xl font-bold text-advibe-dark mb-4">What Our Clients Say</h2>
+                        <p class="text-lg text-advibe-dark/70 max-w-2xl mx-auto">
+                            Don't just take our word for it. Here's what our satisfied clients have to say about working with Advibe.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg fade-in">
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-advibe-dark/80 mb-6 italic">"Advibe transformed our social media presence completely. Our engagement increased by 400% within just 3 months. Their creative content and strategic approach exceeded our expectations."</p>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-advibe-gradient rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-white font-semibold">RS</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-advibe-dark">Rajesh Sharma</p>
+                                    <p class="text-sm text-advibe-dark/60">CEO, TechInnovate Solutions</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-8 rounded-2xl shadow-lg fade-in">
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-advibe-dark/80 mb-6 italic">"The team at Advibe is incredibly professional and results-driven. Our website traffic doubled, and we're generating 3x more leads than before. Highly recommend their services!"</p>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-advibe-gradient rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-white font-semibold">PK</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-advibe-dark">Priya Kapoor</p>
+                                    <p class="text-sm text-advibe-dark/60">Marketing Director, FashionForward</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-8 rounded-2xl shadow-lg fade-in">
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-advibe-dark/80 mb-6 italic">"Working with Advibe has been a game-changer for our business. Their strategic approach to digital marketing helped us achieve a 250% increase in online sales within 6 months."</p>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-advibe-gradient rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-white font-semibold">AS</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-advibe-dark">Amit Singh</p>
+                                    <p class="text-sm text-advibe-dark/60">Founder, GreenEarth Organics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call-to-Action Banner -->
+            <section class="bg-advibe-gradient py-20">
+                <div class="container mx-auto px-4">
+                    <div class="text-center fade-in">
+                        <h2 class="text-3xl md:text-5xl font-bold text-advibe-dark mb-6">
+                            Let's Vibe Your Brand Today!
+                        </h2>
+                        <p class="text-xl text-advibe-dark/80 mb-8 max-w-2xl mx-auto">
+                            Ready to transform your digital presence and accelerate your growth? Let's create something amazing together.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button onclick="showPage('inquiry')" class="bg-white text-advibe-pink px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg transition-all">
+                                Start Your Journey
+                            </button>
+                            <button onclick="showPage('contact')" class="border-2 border-advibe-dark text-advibe-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-advibe-dark hover:text-white transition-all">
+                                Contact Us
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- ABOUT PAGE -->
+        <section id="about" class="page-section">
+            <!-- About Hero -->
+            <section class="bg-advibe-gradient py-20">
+                <div class="container mx-auto px-4">
+                    <div class="text-center max-w-4xl mx-auto fade-in">
+                        <h1 class="text-4xl md:text-6xl font-bold text-advibe-dark mb-6">About Advibe</h1>
+                        <p class="text-xl text-advibe-dark/80 leading-relaxed">
+                            We're not just another marketing agency. We're creative storytellers, strategic thinkers, and growth hackers who believe in the power of authentic brand experiences.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What is Advibe -->
+            <section class="py-20">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="fade-in mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold text-advibe-dark mb-8">What is Advibe?</h2>
+                            <p class="text-lg text-advibe-dark/80 leading-relaxed mb-6">
+                                Advibe is a dynamic digital marketing agency founded on the belief that every brand has a unique story worth telling. We specialize in creating compelling digital experiences that not only capture attention but drive meaningful engagement and sustainable growth.
+                            </p>
+                            <p class="text-lg text-advibe-dark/80 leading-relaxed mb-6">
+                                Our team combines creative expertise with data-driven strategies to deliver marketing solutions that resonate with your audience and achieve measurable results. From startups looking to make their mark to established brands seeking to evolve, we partner with businesses across industries to amplify their voice in the digital landscape.
+                            </p>
+                            <p class="text-lg text-advibe-dark/80 leading-relaxed">
+                                At Advibe, we don't just follow trends – we create them. Our holistic approach to digital marketing encompasses everything from brand strategy and creative content to performance marketing and analytics, ensuring your brand not only stands out but thrives in today's competitive marketplace.
+                            </p>
+                        </div>
+
+                        <!-- Creative Marketing Image -->
+                        <div class="fade-in mb-16">
+                            <!-- Creative team brainstorming marketing strategies around a modern office table -->
+                            <img src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=600" alt="Creative marketing team brainstorming innovative strategies" class="rounded-2xl shadow-lg w-full h-auto" />
+                        </div>
+
+                        <!-- Mission & Vision -->
+                        <div class="grid md:grid-cols-2 gap-12 mb-16">
+                            <div class="fade-in">
+                                <h3 class="text-2xl font-bold text-advibe-dark mb-6 flex items-center">
+                                    <div class="w-8 h-8 bg-advibe-pink rounded-lg flex items-center justify-center mr-3">
+                                        <i class="fas fa-bullseye text-white"></i>
+                                    </div>
+                                    Our Mission
+                                </h3>
+                                <p class="text-advibe-dark/80 leading-relaxed">
+                                    To empower brands with innovative digital marketing strategies that drive authentic connections, sustainable growth, and measurable success. We're committed to delivering creative solutions that not only meet but exceed our clients' expectations while building lasting partnerships based on trust and results.
+                                </p>
+                            </div>
+                            
+                            <div class="fade-in">
+                                <h3 class="text-2xl font-bold text-advibe-dark mb-6 flex items-center">
+                                    <div class="w-8 h-8 bg-advibe-blue rounded-lg flex items-center justify-center mr-3">
+                                        <i class="fas fa-eye text-white"></i>
+                                    </div>
+                                    Our Vision
+                                </h3>
+                                <p class="text-advibe-dark/80 leading-relaxed">
+                                    To become the leading digital marketing agency recognized for transforming brands through creative excellence and strategic innovation. We envision a future where every business, regardless of size, has access to world-class marketing solutions that enable them to thrive in the digital economy.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Why Choose Us -->
+                        <div class="fade-in">
+                            <h3 class="text-3xl font-bold text-advibe-dark mb-8">Why Choose Advibe?</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-6 h-6 bg-advibe-pink rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                        <i class="fas fa-check text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-advibe-dark mb-2">Data-Driven Approach</h4>
+                                        <p class="text-advibe-dark/70">Every strategy is backed by comprehensive research and analytics to ensure maximum ROI.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-6 h-6 bg-advibe-pink rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                        <i class="fas fa-check text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-advibe-dark mb-2">Creative Excellence</h4>
+                                        <p class="text-advibe-dark/70">Award-winning creative team delivering visually stunning and engaging content.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-6 h-6 bg-advibe-blue rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                        <i class="fas fa-check text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-advibe-dark mb-2">Transparent Reporting</h4>
+                                        <p class="text-advibe-dark/70">Regular, detailed reports keeping you informed about campaign performance and progress.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-6 h-6 bg-advibe-blue rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                        <i class="fas fa-check text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-advibe-dark mb-2">24/7 Support</h4>
+                                        <p class="text-advibe-dark/70">Dedicated account management and round-the-clock support for all your marketing needs.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-6 h-6 bg-advibe-pink rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                        <i class="fas fa-check text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-advibe-dark mb-2">Scalable Solutions</h4>
+                                        <p class="text-advibe-dark/70">Flexible packages that grow with your business and adapt to changing market conditions.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-6 h-6 bg-advibe-blue rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                        <i class="fas fa-check text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-advibe-dark mb-2">Industry Expertise</h4>
+                                        <p class="text-advibe-dark/70">Deep understanding of various industries and their unique marketing challenges and opportunities.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="bg-gray-50 py-16">
+                <div class="container mx-auto px-4">
+                    <div class="text-center fade-in">
+                        <h3 class="text-3xl font-bold text-advibe-dark mb-6">Ready to Start Your Journey?</h3>
+                        <p class="text-lg text-advibe-dark/70 mb-8 max-w-2xl mx-auto">
+                            Let's discuss how Advibe can help transform your brand and accelerate your growth.
+                        </p>
+                        <button onclick="showPage('inquiry')" class="gradient-hover px-8 py-4 rounded-full text-white font-semibold text-lg">
+                            Get Started Today
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- SERVICES PAGE -->
+        <section id="services" class="page-section">
+            <!-- Services Hero -->
+            <section class="bg-advibe-gradient py-20">
+                <div class="container mx-auto px-4">
+                    <div class="text-center max-w-4xl mx-auto fade-in">
+                        <h1 class="text-4xl md:text-6xl font-bold text-advibe-dark mb-6">Our Services</h1>
+                        <p class="text-xl text-advibe-dark/80 leading-relaxed">
+                            comprehensive digital marketing solutions designed to elevate your brand, engage your audience, and drive measurable results.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Detail -->
+            <section class="py-20">
+                <div class="container mx-auto px-4 max-w-6xl">
+                    <!-- Social Media Management -->
+                    <div class="mb-20 fade-in">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-gradient-to-br from-advibe-pink to-advibe-blue rounded-2xl flex items-center justify-center mr-4">
+                                        <i class="fab fa-instagram text-white text-2xl"></i>
+                                    </div>
+                                    <h2 class="text-3xl font-bold text-advibe-dark">Social Media Management</h2>
+                                </div>
+                                <p class="text-lg text-advibe-dark/80 leading-relaxed mb-6">
+                                    Transform your social media presence with our comprehensive management services. We create engaging content, build authentic communities, and drive meaningful interactions across all major platforms including Instagram, Facebook, Twitter, LinkedIn, and TikTok.
+                                </p>
+                                <ul class="space-y-3 mb-8">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-pink mr-3"></i>
+                                        <span>Strategic content planning and calendar management</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-pink mr-3"></i>
+                                        <span>Professional graphic design and video content creation</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-pink mr-3"></i>
+                                        <span>Community management and audience engagement</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-pink mr-3"></i>
+                                        <span>Hashtag research and optimization strategies</span>
+                                    </li>
+                                </ul>
+                                <button onclick="showPage('inquiry')" class="gradient-hover px-6 py-3 rounded-full text-white font-semibold">
+                                    Get Started
+                                </button>
+                            </div>
+                            <div>
+                                <!-- Social media marketing dashboard with analytics and content planning -->
+                                <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Social media marketing dashboard with analytics and engagement metrics" class="rounded-2xl shadow-lg w-full h-auto" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Marketing -->
+                    <div class="mb-20 fade-in">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div class="order-2 lg:order-1">
+                                <!-- Digital advertising performance metrics and campaign optimization dashboard -->
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Performance marketing analytics dashboard showing ROI and campaign metrics" class="rounded-2xl shadow-lg w-full h-auto" />
+                            </div>
+                            <div class="order-1 lg:order-2">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-gradient-to-br from-advibe-pink to-advibe-blue rounded-2xl flex items-center justify-center mr-4">
+                                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                                    </div>
+                                    <h2 class="text-3xl font-bold text-advibe-dark">Performance Marketing</h2>
+                                </div>
+                                <p class="text-lg text-advibe-dark/80 leading-relaxed mb-6">
+                                    Drive measurable results with our data-driven performance marketing strategies. We create and optimize advertising campaigns across Google Ads, Facebook Ads, Instagram Ads, and other platforms to maximize your ROI and achieve your business objectives.
+                                </p>
+                                <ul class="space-y-3 mb-8">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-blue mr-3"></i>
+                                        <span>Google Ads campaign creation and optimization</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-blue mr-3"></i>
+                                        <span>Facebook and Instagram advertising management</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-blue mr-3"></i>
+                                        <span>Conversion tracking and ROI optimization</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-blue mr-3"></i>
+                                        <span>A/B testing and performance analysis</span>
+                                    </li>
+                                </ul>
+                                <button onclick="showPage('inquiry')" class="gradient-hover px-6 py-3 rounded-full text-white font-semibold">
+                                    Learn More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Branding & Content Creation -->
+                    <div class="mb-20 fade-in">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-gradient-to-br from-advibe-pink to-advibe-blue rounded-2xl flex items-center justify-center mr-4">
+                                        <i class="fas fa-palette text-white text-2xl"></i>
+                                    </div>
+                                    <h2 class="text-3xl font-bold text-advibe-dark">Branding & Content Creation</h2>
+                                </div>
+                                <p class="text-lg text-advibe-dark/80 leading-relaxed mb-6">
+                                    Build a distinctive brand identity that resonates with your target audience. Our creative team develops compelling visual identities, engaging content, and cohesive brand experiences that tell your unique story and differentiate you from competitors.
+                                </p>
+                                <ul class="space-y-3 mb-8">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-pink mr-3"></i>
+                                        <span>Logo design and brand identity development</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-pink mr-3"></i>
+                                        <span>Content writing and copywriting services</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-pink mr-3"></i>
+                                        <span>Video production and motion graphics</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-pink mr-3"></i>
+                                        <span>Brand guidelines and style documentation</span>
+                                    </li>
+                                </ul>
+                                <button onclick="showPage('inquiry')" class="gradient-hover px-6 py-3 rounded-full text-white font-semibold">
+                                    Create Your Brand
+                                </button>
+                            </div>
+                            <div>
+                                <!-- Creative designer working on brand identity and visual content -->
+                                <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Creative designer working on brand identity and visual content creation" class="rounded-2xl shadow-lg w-full h-auto" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Website Development & SEO -->
+                    <div class="mb-20 fade-in">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div class="order-2 lg:order-1">
+                                <!-- Modern responsive website development and SEO optimization process -->
+                                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Web developer creating responsive websites with SEO optimization" class="rounded-2xl shadow-lg w-full h-auto" />
+                            </div>
+                            <div class="order-1 lg:order-2">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-gradient-to-br from-advibe-pink to-advibe-blue rounded-2xl flex items-center justify-center mr-4">
+                                        <i class="fas fa-code text-white text-2xl"></i>
+                                    </div>
+                                    <h2 class="text-3xl font-bold text-advibe-dark">Website Development & SEO</h2>
+                                </div>
+                                <p class="text-lg text-advibe-dark/80 leading-relaxed mb-6">
+                                    Create powerful, user-friendly websites that drive conversions and rank well in search engines. Our development team builds responsive, fast-loading websites optimized for both user experience and search engine visibility.
+                                </p>
+                                <ul class="space-y-3 mb-8">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-blue mr-3"></i>
+                                        <span>Custom website design and development</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-blue mr-3"></i>
+                                        <span>Search engine optimization (SEO) strategies</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-blue mr-3"></i>
+                                        <span>Mobile-responsive and fast-loading designs</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-blue mr-3"></i>
+                                        <span>E-commerce and CMS implementation</span>
+                                    </li>
+                                </ul>
+                                <button onclick="showPage('inquiry')" class="gradient-hover px-6 py-3 rounded-full text-white font-semibold">
+                                    Build Your Site
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Strategy & Consulting -->
+                    <div class="mb-20 fade-in">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-gradient-to-br from-advibe-pink to-advibe-blue rounded-2xl flex items-center justify-center mr-4">
+                                        <i class="fas fa-lightbulb text-white text-2xl"></i>
+                                    </div>
+                                    <h2 class="text-3xl font-bold text-advibe-dark">Strategy & Consulting</h2>
+                                </div>
+                                <p class="text-lg text-advibe-dark/80 leading-relaxed mb-6">
+                                    Navigate the complex digital landscape with expert guidance and strategic planning. Our consultants work closely with your team to develop comprehensive marketing strategies aligned with your business goals and market opportunities.
+                                </p>
+                                <ul class="space-y-3 mb-8">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-pink mr-3"></i>
+                                        <span>Digital marketing strategy development</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-pink mr-3"></i>
+                                        <span>Market research and competitor analysis</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-pink mr-3"></i>
+                                        <span>Brand positioning and messaging frameworks</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-pink mr-3"></i>
+                                        <span>Campaign planning and budget optimization</span>
+                                    </li>
+                                </ul>
+                                <button onclick="showPage('inquiry')" class="gradient-hover px-6 py-3 rounded-full text-white font-semibold">
+                                    Get Strategic Guidance
+                                </button>
+                            </div>
+                            <div>
+                                <!-- Business strategy consultation meeting with marketing experts -->
+                                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Strategic marketing consultation meeting with business experts" class="rounded-2xl shadow-lg w-full h-auto" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Tracking & Reporting -->
+                    <div class="fade-in">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div class="order-2 lg:order-1">
+                                <!-- Analytics dashboard showing comprehensive marketing performance data -->
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Analytics dashboard displaying marketing performance data and reporting metrics" class="rounded-2xl shadow-lg w-full h-auto" />
+                            </div>
+                            <div class="order-1 lg:order-2">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-gradient-to-br from-advibe-pink to-advibe-blue rounded-2xl flex items-center justify-center mr-4">
+                                        <i class="fas fa-chart-bar text-white text-2xl"></i>
+                                    </div>
+                                    <h2 class="text-3xl font-bold text-advibe-dark">Data Tracking & Reporting</h2>
+                                </div>
+                                <p class="text-lg text-advibe-dark/80 leading-relaxed mb-6">
+                                    Make informed decisions with comprehensive analytics and transparent reporting. We provide detailed insights into campaign performance, user behavior, and ROI metrics to help you understand what's working and optimize for better results.
+                                </p>
+                                <ul class="space-y-3 mb-8">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-blue mr-3"></i>
+                                        <span>Google Analytics setup and configuration</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-blue mr-3"></i>
+                                        <span>Custom dashboard creation and monitoring</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-blue mr-3"></i>
+                                        <span>Monthly performance reports and insights</span>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check-circle text-advibe-blue mr-3"></i>
+                                        <span>KPI tracking and goal measurement</span>
+                                    </li>
+                                </ul>
+                                <button onclick="showPage('inquiry')" class="gradient-hover px-6 py-3 rounded-full text-white font-semibold">
+                                    Track Your Success
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="bg-gray-50 py-16">
+                <div class="container mx-auto px-4">
+                    <div class="text-center fade-in">
+                        <h3 class="text-3xl font-bold text-advibe-dark mb-6">Ready to Elevate Your Marketing?</h3>
+                        <p class="text-lg text-advibe-dark/70 mb-8 max-w-2xl mx-auto">
+                            Let's discuss which services are right for your business and create a customized strategy for your success.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button onclick="showPage('inquiry')" class="gradient-hover px-8 py-4 rounded-full text-white font-semibold text-lg">
+                                Get a Free Consultation
+                            </button>
+                            <button onclick="showPage('plans')" class="border-2 border-advibe-pink text-advibe-pink px-8 py-4 rounded-full font-semibold text-lg hover:bg-advibe-pink hover:text-white transition-all">
+                                View Our Plans
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- PLANS & PRICING PAGE -->
+        <section id="plans" class="page-section">
+            <!-- Plans Hero -->
+            <section class="bg-advibe-gradient py-20">
+                <div class="container mx-auto px-4">
+                    <div class="text-center max-w-4xl mx-auto fade-in">
+                        <h1 class="text-4xl md:text-6xl font-bold text-advibe-dark mb-6">Plans & Pricing</h1>
+                        <p class="text-xl text-advibe-dark/80 leading-relaxed">
+                            Choose the perfect plan for your business needs. All plans include dedicated account management and transparent reporting.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Plans -->
+            <section class="py-20">
+                <div class="container mx-auto px-4">
+                    <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                        <!-- Silver Plan -->
+                        <div class="bg-white rounded-3xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl fade-in">
+                            <div class="text-center mb-8">
+                                <div class="w-16 h-16 bg-gradient-to-br from-gray-400 to-gray-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-gem text-white text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-advibe-dark mb-2">Silver Plan</h3>
+                                <div class="text-4xl font-bold text-advibe-pink mb-2">₹15,000</div>
+                                <span class="text-advibe-dark/60">/month</span>
+                                <p class="text-advibe-dark/70 mt-4">Perfect for startups and small businesses</p>
+                            </div>
+                            
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>8 Social Media Posts</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>2 Professional Reels</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>8 Story Posts</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Instagram & Facebook Management</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Custom Flyer Designs</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Reel Editing & Production</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Post Boosting & Promotion</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>250 Printed Pamphlets</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>3 Marketing Banners</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Monthly Performance Report</span>
+                                </div>
+                            </div>
+                            
+                            <button onclick="showPage('inquiry')" data-plan="Silver" class="w-full py-3 border-2 border-advibe-pink text-advibe-pink rounded-full font-semibold hover:bg-advibe-pink hover:text-white transition-all">
+                                Subscribe Now
+                            </button>
+                        </div>
+
+                        <!-- Gold Plan -->
+                        <div class="bg-white rounded-3xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl fade-in relative border-2 border-advibe-pink">
+                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                                <span class="bg-gradient-to-r from-advibe-pink to-advibe-blue text-white px-6 py-2 rounded-full text-sm font-semibold">Most Popular</span>
+                            </div>
+                            <div class="text-center mb-8">
+                                <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-crown text-white text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-advibe-dark mb-2">Gold Plan</h3>
+                                <div class="text-4xl font-bold text-advibe-pink mb-2">₹21,000</div>
+                                <span class="text-advibe-dark/60">/month</span>
+                                <p class="text-advibe-dark/70 mt-4">Ideal for growing businesses</p>
+                            </div>
+                            
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>12 Social Media Posts</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>4 Professional Reels</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>12 Story Posts</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Instagram, Facebook & LinkedIn Management</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Google My Business Optimization</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Lead Generation Campaigns</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>350 Printed Pamphlets</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>5 Marketing Banners</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Bi-weekly Performance Reports</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Priority Customer Support</span>
+                                </div>
+                            </div>
+                            
+                            <button onclick="showPage('inquiry')" data-plan="Gold" class="w-full gradient-hover py-3 text-white rounded-full font-semibold">
+                                Subscribe Now
+                            </button>
+                        </div>
+
+                        <!-- Diamond Plan -->
+                        <div class="bg-white rounded-3xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl fade-in">
+                            <div class="text-center mb-8">
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-diamond text-white text-2xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-advibe-dark mb-2">Diamond Plan</h3>
+                                <div class="text-4xl font-bold text-advibe-pink mb-2">₹36,000</div>
+                                <span class="text-advibe-dark/60">/month</span>
+                                <p class="text-advibe-dark/70 mt-4">Premium solution for established businesses</p>
+                            </div>
+                            
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>12 Posts + 3 LinkedIn Posts</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>8 Premium Reels</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>16 Story Posts</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Full Platform Management (Instagram, Facebook, LinkedIn)</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Website Development & Maintenance</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Google Ads Management</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>SEO Optimization</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>500 Premium Pamphlets</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>7 Professional Banners</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Weekly Performance Reports</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                    <span>Dedicated Account Manager</span>
+                                </div>
+                            </div>
+                            
+                            <button onclick="showPage('inquiry')" data-plan="Diamond" class="w-full py-3 border-2 border-advibe-pink text-advibe-pink rounded-full font-semibold hover:bg-advibe-pink hover:text-white transition-all">
+                                Subscribe Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparison Table -->
+            <section class="py-16 bg-gray-50">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12 fade-in">
+                        <h2 class="text-3xl font-bold text-advibe-dark mb-4">Compare Plans</h2>
+                        <p class="text-lg text-advibe-dark/70">Detailed comparison of all our marketing packages</p>
+                    </div>
+                    
+                    <div class="overflow-x-auto fade-in">
+                        <table class="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+                            <thead class="bg-gradient-to-r from-advibe-pink to-advibe-blue text-white">
+                                <tr>
+                                    <th class="px-6 py-4 text-left font-semibold">Features</th>
+                                    <th class="px-6 py-4 text-center font-semibold">Silver</th>
+                                    <th class="px-6 py-4 text-center font-semibold">Gold</th>
+                                    <th class="px-6 py-4 text-center font-semibold">Diamond</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-advibe-dark">Monthly Price</td>
+                                    <td class="px-6 py-4 text-center font-bold text-advibe-pink">₹15,000</td>
+                                    <td class="px-6 py-4 text-center font-bold text-advibe-pink">₹21,000</td>
+                                    <td class="px-6 py-4 text-center font-bold text-advibe-pink">₹36,000</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-advibe-dark">Social Media Posts</td>
+                                    <td class="px-6 py-4 text-center">8</td>
+                                    <td class="px-6 py-4 text-center">12</td>
+                                    <td class="px-6 py-4 text-center">15</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-advibe-dark">Professional Reels</td>
+                                    <td class="px-6 py-4 text-center">2</td>
+                                    <td class="px-6 py-4 text-center">4</td>
+                                    <td class="px-6 py-4 text-center">8</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-advibe-dark">Story Posts</td>
+                                    <td class="px-6 py-4 text-center">8</td>
+                                    <td class="px-6 py-4 text-center">12</td>
+                                    <td class="px-6 py-4 text-center">16</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-advibe-dark">Platform Management</td>
+                                    <td class="px-6 py-4 text-center">Instagram, Facebook</td>
+                                    <td class="px-6 py-4 text-center">Instagram, Facebook, LinkedIn</td>
+                                    <td class="px-6 py-4 text-center">All Platforms</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-advibe-dark">Google My Business</td>
+                                    <td class="px-6 py-4 text-center"><i class="fas fa-times text-red-500"></i></td>
+                                    <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                    <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-advibe-dark">Google Ads</td>
+                                    <td class="px-6 py-4 text-center"><i class="fas fa-times text-red-500"></i></td>
+                                    <td class="px-6 py-4 text-center"><i class="fas fa-times text-red-500"></i></td>
+                                    <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-advibe-dark">SEO Services</td>
+                                    <td class="px-6 py-4 text-center"><i class="fas fa-times text-red-500"></i></td>
+                                    <td class="px-6 py-4 text-center"><i class="fas fa-times text-red-500"></i></td>
+                                    <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-advibe-dark">Website Development</td>
+                                    <td class="px-6 py-4 text-center"><i class="fas fa-times text-red-500"></i></td>
+                                    <td class="px-6 py-4 text-center"><i class="fas fa-times text-red-500"></i></td>
+                                    <td class="px-6 py-4 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-advibe-dark">Printed Pamphlets</td>
+                                    <td class="px-6 py-4 text-center">250</td>
+                                    <td class="px-6 py-4 text-center">350</td>
+                                    <td class="px-6 py-4 text-center">500</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-advibe-dark">Marketing Banners</td>
+                                    <td class="px-6 py-4 text-center">3</td>
+                                    <td class="px-6 py-4 text-center">5</td>
+                                    <td class="px-6 py-4 text-center">7</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-advibe-dark">Performance Reports</td>
+                                    <td class="px-6 py-4 text-center">Monthly</td>
+                                    <td class="px-6 py-4 text-center">Bi-weekly</td>
+                                    <td class="px-6 py-4 text-center">Weekly</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-medium text-advibe-dark">Account Manager</td>
+                                    <td class="px-6 py-4 text-center">Shared</td>
+                                    <td class="px-6 py-4 text-center">Priority</td>
+                                    <td class="px-6 py-4 text-center">Dedicated</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="py-16">
+                <div class="container mx-auto px-4">
+                    <div class="text-center fade-in">
+                        <h3 class="text-3xl font-bold text-advibe-dark mb-6">Still Have Questions?</h3>
+                        <p class="text-lg text-advibe-dark/70 mb-8 max-w-2xl mx-auto">
+                            Our team is here to help you choose the right plan for your business needs and answer any questions you may have.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button onclick="showPage('contact')" class="gradient-hover px-8 py-4 rounded-full text-white font-semibold text-lg">
+                                Contact Us
+                            </button>
+                            <button onclick="showPage('inquiry')" class="border-2 border-advibe-pink text-advibe-pink px-8 py-4 rounded-full font-semibold text-lg hover:bg-advibe-pink hover:text-white transition-all">
+                                Get Custom Quote
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- BLOG PAGE -->
+        <section id="blog" class="page-section">
+            <!-- Blog Hero -->
+            <section class="bg-advibe-gradient py-20">
+                <div class="container mx-auto px-4">
+                    <div class="text-center max-w-4xl mx-auto fade-in">
+                        <h1 class="text-4xl md:text-6xl font-bold text-advibe-dark mb-6">Marketing Insights</h1>
+                        <p class="text-xl text-advibe-dark/80 leading-relaxed">
+                            Stay ahead of the curve with our latest marketing tips, industry trends, and success stories.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Post -->
+            <section class="py-20">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-4xl mx-auto fade-in">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                            <div class="md:flex">
+                                <div class="md:w-1/2">
+                                    <!-- Digital marketing strategy with analytics and performance metrics -->
+                                    <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" alt="Digital marketing strategy analysis with performance metrics and analytics" class="w-full h-64 md:h-full object-cover" />
+                                </div>
+                                <div class="md:w-1/2 p-8">
+                                    <div class="uppercase tracking-wide text-sm text-advibe-pink font-semibold mb-2">Featured Article</div>
+                                    <h2 class="text-2xl font-bold text-advibe-dark mb-4">10 Digital Marketing Trends That Will Dominate 2024</h2>
+                                    <p class="text-advibe-dark/70 mb-6">Discover the latest digital marketing trends that are shaping the industry and learn how to implement them in your marketing strategy for maximum impact and ROI.</p>
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-advibe-gradient rounded-full flex items-center justify-center mr-4">
+                                            <span class="text-white font-semibold text-sm">SA</span>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-advibe-dark">Sarah Anderson</p>
+                                            <p class="text-sm text-advibe-dark/60">Marketing Director • 5 min read</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog Posts Grid -->
+            <section class="pb-20">
+                <div class="container mx-auto px-4">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                        <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl fade-in">
+                            <!-- Social media engagement and community building strategies -->
+                            <img src="https://images.unsplash.com/photo-1554177255-61502b352de3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Social media engagement strategies and community building tactics" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <div class="text-advibe-pink text-sm font-semibold mb-2">SOCIAL MEDIA</div>
+                                <h3 class="text-xl font-bold text-advibe-dark mb-3">How to Build an Engaged Social Media Community</h3>
+                                <p class="text-advibe-dark/70 mb-4">Learn proven strategies for building authentic relationships with your audience and creating a thriving online community around your brand.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-advibe-dark/60">March 15, 2024</span>
+                                    <span class="text-sm text-advibe-dark/60">4 min read</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl fade-in">
+                            <!-- SEO optimization and website performance improvement -->
+                            <img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="SEO optimization and website performance analysis dashboard" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <div class="text-advibe-blue text-sm font-semibold mb-2">SEO TIPS</div>
+                                <h3 class="text-xl font-bold text-advibe-dark mb-3">SEO Best Practices for Small Businesses in 2024</h3>
+                                <p class="text-advibe-dark/70 mb-4">Discover actionable SEO strategies that small businesses can implement to improve their search rankings and drive organic traffic.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-advibe-dark/60">March 12, 2024</span>
+                                    <span class="text-sm text-advibe-dark/60">6 min read</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl fade-in">
+                            <!-- Email marketing campaign design and automation -->
+                            <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Email marketing campaign design and automation workflow" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <div class="text-advibe-pink text-sm font-semibold mb-2">EMAIL MARKETING</div>
+                                <h3 class="text-xl font-bold text-advibe-dark mb-3">Email Marketing Automation That Actually Works</h3>
+                                <p class="text-advibe-dark/70 mb-4">Master the art of email automation with these proven workflows that nurture leads and drive conversions for your business.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-advibe-dark/60">March 10, 2024</span>
+                                    <span class="text-sm text-advibe-dark/60">5 min read</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl fade-in">
+                            <!-- Content marketing strategy and brand storytelling -->
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Content marketing strategy development and brand storytelling workshop" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <div class="text-advibe-blue text-sm font-semibold mb-2">CONTENT STRATEGY</div>
+                                <h3 class="text-xl font-bold text-advibe-dark mb-3">Creating Content That Converts: A Step-by-Step Guide</h3>
+                                <p class="text-advibe-dark/70 mb-4">Transform your content strategy with these actionable tips for creating engaging content that drives results and builds brand loyalty.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-advibe-dark/60">March 8, 2024</span>
+                                    <span class="text-sm text-advibe-dark/60">7 min read</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl fade-in">
+                            <!-- PPC advertising and campaign optimization -->
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="PPC advertising campaign optimization and performance analysis" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <div class="text-advibe-pink text-sm font-semibold mb-2">PPC ADVERTISING</div>
+                                <h3 class="text-xl font-bold text-advibe-dark mb-3">Maximizing ROI from Google Ads: Advanced Strategies</h3>
+                                <p class="text-advibe-dark/70 mb-4">Take your Google Ads campaigns to the next level with advanced optimization techniques that seasoned marketers use to maximize ROI.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-advibe-dark/60">March 5, 2024</span>
+                                    <span class="text-sm text-advibe-dark/60">8 min read</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl fade-in">
+                            <!-- Brand identity design and visual communication -->
+                            <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Brand identity design process and visual communication elements" class="w-full h-48 object-cover" />
+                            <div class="p-6">
+                                <div class="text-advibe-blue text-sm font-semibold mb-2">BRANDING</div>
+                                <h3 class="text-xl font-bold text-advibe-dark mb-3">Building a Brand Identity That Stands Out</h3>
+                                <p class="text-advibe-dark/70 mb-4">Learn how to create a distinctive brand identity that resonates with your target audience and sets you apart from competitors.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-advibe-dark/60">March 3, 2024</span>
+                                    <span class="text-sm text-advibe-dark/60">6 min read</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter Signup -->
+            <section class="bg-gray-50 py-16">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-2xl mx-auto text-center fade-in">
+                        <h3 class="text-3xl font-bold text-advibe-dark mb-4">Stay Updated</h3>
+                        <p class="text-lg text-advibe-dark/70 mb-8">Subscribe to our newsletter and never miss our latest marketing insights, tips, and industry updates.</p>
+                        <form class="flex flex-col sm:flex-row gap-4" data-mock="true">
+                            <input type="email" placeholder="Enter your email address" class="flex-1 px-6 py-4 rounded-full border border-gray-300 focus:border-advibe-pink focus:outline-none" />
+                            <button type="submit" class="gradient-hover px-8 py-4 rounded-full text-white font-semibold whitespace-nowrap">
+                                Subscribe Now
+                            </button>
+                        </form>
+                        <p class="text-sm text-advibe-dark/60 mt-4">No spam, unsubscribe at any time.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- CONTACT PAGE -->
+        <section id="contact" class="page-section">
+            <!-- Contact Hero -->
+            <section class="bg-advibe-gradient py-20">
+                <div class="container mx-auto px-4">
+                    <div class="text-center max-w-4xl mx-auto fade-in">
+                        <h1 class="text-4xl md:text-6xl font-bold text-advibe-dark mb-6">Contact Us</h1>
+                        <p class="text-xl text-advibe-dark/80 leading-relaxed">
+                            Ready to take your marketing to the next level? Let's start a conversation about your goals and how we can help achieve them.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Information & Form -->
+            <section class="py-20">
+                <div class="container mx-auto px-4">
+                    <div class="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+                        <!-- Contact Information -->
+                        <div class="fade-in">
+                            <h2 class="text-3xl font-bold text-advibe-dark mb-8">Get In Touch</h2>
+                            
+                            <div class="space-y-8">
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-advibe-gradient rounded-2xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-phone text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-advibe-dark mb-2">Phone</h3>
+                                        <p class="text-advibe-dark/70">+91 98765 43210</p>
+                                        <p class="text-advibe-dark/70">+91 87654 32109</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-advibe-gradient rounded-2xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-advibe-dark mb-2">Email</h3>
+                                        <p class="text-advibe-dark/70">hello@advibe.com</p>
+                                        <p class="text-advibe-dark/70">support@advibe.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-advibe-gradient rounded-2xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-advibe-dark mb-2">Office Address</h3>
+                                        <p class="text-advibe-dark/70">
+                                            Advibe Digital Marketing<br>
+                                            123 Business Hub, Tech City<br>
+                                            Mumbai, Maharashtra 400001<br>
+                                            India
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-12 h-12 bg-advibe-gradient rounded-2xl flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-clock text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-advibe-dark mb-2">Business Hours</h3>
+                                        <p class="text-advibe-dark/70">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                        <p class="text-advibe-dark/70">Saturday: 10:00 AM - 4:00 PM</p>
+                                        <p class="text-advibe-dark/70">Sunday: Closed</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Social Media Links -->
+                            <div class="mt-12">
+                                <h3 class="font-semibold text-advibe-dark mb-4">Follow Us</h3>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center text-white hover:bg-advibe-blue transition-all">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center text-white hover:bg-advibe-blue transition-all">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center text-white hover:bg-advibe-blue transition-all">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center text-white hover:bg-advibe-blue transition-all">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="fade-in">
+                            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                                <h3 class="text-2xl font-bold text-advibe-dark mb-6">Send Us a Message</h3>
+                                
+                                <form id="contact-form" class="space-y-6" data-mock="true">
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label for="name" class="block text-sm font-semibold text-advibe-dark mb-2">Full Name *</label>
+                                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-advibe-pink focus:outline-none transition-all">
+                                        </div>
+                                        <div>
+                                            <label for="email" class="block text-sm font-semibold text-advibe-dark mb-2">Email Address *</label>
+                                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-advibe-pink focus:outline-none transition-all">
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="phone" class="block text-sm font-semibold text-advibe-dark mb-2">Phone Number *</label>
+                                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-advibe-pink focus:outline-none transition-all">
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="subject" class="block text-sm font-semibold text-advibe-dark mb-2">Subject</label>
+                                        <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-advibe-pink focus:outline-none transition-all">
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="message" class="block text-sm font-semibold text-advibe-dark mb-2">Message *</label>
+                                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-advibe-pink focus:outline-none transition-all resize-none"></textarea>
+                                    </div>
+                                    
+                                    <button type="submit" class="w-full gradient-hover py-4 rounded-lg text-white font-semibold text-lg">
+                                        Send Message
+                                    </button>
+                                </form>
+                                
+                                <!-- Success/Error Messages -->
+                                <div id="form-message" class="mt-4 p-4 rounded-lg hidden">
+                                    <!-- Success/error messages will be displayed here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Google Maps -->
+            <section class="pb-20">
+                <div class="container mx-auto px-4">
+                    <div class="fade-in">
+                        <h3 class="text-3xl font-bold text-advibe-dark mb-8 text-center">Find Us On Map</h3>
+                        <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-lg">
+                            <!-- Google Maps Embed Placeholder -->
+                            <div class="w-full h-96 bg-gray-300 flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fas fa-map-marked-alt text-6xl text-advibe-pink mb-4"></i>
+                                    <p class="text-lg font-semibold text-advibe-dark">Interactive Map</p>
+                                    <p class="text-advibe-dark/70">Google Maps integration will be implemented here</p>
+                                    <p class="text-sm text-advibe-dark/60 mt-2">123 Business Hub, Tech City, Mumbai, Maharashtra 400001</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- INQUIRY PAGE -->
+        <section id="inquiry" class="page-section">
+            <!-- Inquiry Hero -->
+            <section class="bg-advibe-gradient py-20">
+                <div class="container mx-auto px-4">
+                    <div class="text-center max-w-4xl mx-auto fade-in">
+                        <h1 class="text-4xl md:text-6xl font-bold text-advibe-dark mb-6">Get Your Free Consultation</h1>
+                        <p class="text-xl text-advibe-dark/80 leading-relaxed">
+                            Take the first step towards transforming your digital presence. Fill out the form below and our experts will get back to you within 24 hours.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Inquiry Form -->
+            <section class="py-20">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-3xl mx-auto">
+                        <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl fade-in">
+                            <div class="text-center mb-8">
+                                <h2 class="text-3xl font-bold text-advibe-dark mb-4">Tell Us About Your Project</h2>
+                                <p class="text-lg text-advibe-dark/70">The more details you provide, the better we can tailor our solution to your needs.</p>
+                            </div>
+                            
+                            <form id="inquiry-form" class="space-y-8" data-mock="true">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="inquiry-name" class="block text-sm font-semibold text-advibe-dark mb-3">Full Name *</label>
+                                        <input type="text" id="inquiry-name" name="name" required class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:border-advibe-pink focus:outline-none transition-all text-lg">
+                                    </div>
+                                    <div>
+                                        <label for="inquiry-email" class="block text-sm font-semibold text-advibe-dark mb-3">Email Address *</label>
+                                        <input type="email" id="inquiry-email" name="email" required class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:border-advibe-pink focus:outline-none transition-all text-lg">
+                                    </div>
+                                </div>
+                                
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="inquiry-phone" class="block text-sm font-semibold text-advibe-dark mb-3">Phone Number *</label>
+                                        <input type="tel" id="inquiry-phone" name="phone" required class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:border-advibe-pink focus:outline-none transition-all text-lg">
+                                    </div>
+                                    <div>
+                                        <label for="business-name" class="block text-sm font-semibold text-advibe-dark mb-3">Business Name</label>
+                                        <input type="text" id="business-name" name="business" class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:border-advibe-pink focus:outline-none transition-all text-lg">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="plan-interest" class="block text-sm font-semibold text-advibe-dark mb-3">Plan of Interest</label>
+                                    <select id="plan-interest" name="plan" class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:border-advibe-pink focus:outline-none transition-all text-lg bg-white">
+                                        <option value="">Select a plan</option>
+                                        <option value="silver">Silver Plan - ₹15,000/month</option>
+                                        <option value="gold">Gold Plan - ₹21,000/month</option>
+                                        <option value="diamond">Diamond Plan - ₹36,000/month</option>
+                                        <option value="custom">Custom Solution</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label for="inquiry-message" class="block text-sm font-semibold text-advibe-dark mb-3">Tell Us About Your Goals *</label>
+                                    <textarea id="inquiry-message" name="message" rows="6" required placeholder="Describe your business, current marketing challenges, and what you hope to achieve..." class="w-full px-5 py-4 border-2 border-gray-200 rounded-xl focus:border-advibe-pink focus:outline-none transition-all text-lg resize-none"></textarea>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-6 rounded-xl">
+                                    <h4 class="font-semibold text-advibe-dark mb-4">What happens next?</h4>
+                                    <div class="space-y-3">
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 bg-advibe-pink rounded-full flex items-center justify-center mr-3">
+                                                <span class="text-white text-sm font-semibold">1</span>
+                                            </div>
+                                            <span class="text-advibe-dark/80">We'll review your inquiry within 24 hours</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 bg-advibe-blue rounded-full flex items-center justify-center mr-3">
+                                                <span class="text-white text-sm font-semibold">2</span>
+                                            </div>
+                                            <span class="text-advibe-dark/80">Schedule a free 30-minute consultation call</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 bg-advibe-pink rounded-full flex items-center justify-center mr-3">
+                                                <span class="text-white text-sm font-semibold">3</span>
+                                            </div>
+                                            <span class="text-advibe-dark/80">Receive a customized marketing strategy proposal</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <button type="submit" class="gradient-hover px-12 py-5 rounded-full text-white font-bold text-xl shadow-lg">
+                                        Get My Free Consultation
+                                    </button>
+                                    <p class="text-sm text-advibe-dark/60 mt-4">No spam, no commitment. Just valuable insights for your business.</p>
+                                </div>
+                            </form>
+                            
+                            <!-- Form Success/Error Messages -->
+                            <div id="inquiry-form-message" class="mt-6 p-4 rounded-lg hidden">
+                                <!-- Messages will be displayed here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us - Quick Highlights -->
+            <section class="bg-gray-50 py-16">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12 fade-in">
+                        <h3 class="text-3xl font-bold text-advibe-dark mb-4">Why Businesses Choose Advibe</h3>
+                        <p class="text-lg text-advibe-dark/70">Join hundreds of successful businesses who trust us with their digital marketing.</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                        <div class="text-center fade-in">
+                            <div class="w-16 h-16 bg-advibe-gradient rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-chart-line text-white text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-advibe-dark mb-3">Proven Results</h4>
+                            <p class="text-advibe-dark/70">Average 300% increase in online engagement within the first 3 months.</p>
+                        </div>
+                        
+                        <div class="text-center fade-in">
+                            <div class="w-16 h-16 bg-advibe-gradient rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-users text-white text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-advibe-dark mb-3">Expert Team</h4>
+                            <p class="text-advibe-dark/70">Certified marketing professionals with 5+ years of industry experience.</p>
+                        </div>
+                        
+                        <div class="text-center fade-in">
+                            <div class="w-16 h-16 bg-advibe-gradient rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-headset text-white text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-advibe-dark mb-3">24/7 Support</h4>
+                            <p class="text-advibe-dark/70">Dedicated account managers and round-the-clock support for your success.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-advibe-dark text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="fade-in">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-8 h-8 bg-advibe-gradient rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">A</span>
+                        </div>
+                        <span class="text-xl font-bold">Advibe</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Transform your brand with creative digital marketing solutions that drive real results and sustainable growth.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center hover:bg-advibe-blue transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center hover:bg-advibe-blue transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center hover:bg-advibe-blue transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center hover:bg-advibe-blue transition-all">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="fade-in">
+                    <h4 class="text-xl font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><button onclick="showPage('home')" class="text-gray-300 hover:text-advibe-pink transition-all">Home</button></li>
+                        <li><button onclick="showPage('about')" class="text-gray-300 hover:text-advibe-pink transition-all">About Us</button></li>
+                        <li><button onclick="showPage('services')" class="text-gray-300 hover:text-advibe-pink transition-all">Services</button></li>
+                        <li><button onclick="showPage('plans')" class="text-gray-300 hover:text-advibe-pink transition-all">Plans & Pricing</button></li>
+                        <li><button onclick="showPage('blog')" class="text-gray-300 hover:text-advibe-pink transition-all">Blog</button></li>
+                        <li><button onclick="showPage('contact')" class="text-gray-300 hover:text-advibe-pink transition-all">Contact</button></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="fade-in">
+                    <h4 class="text-xl font-semibold mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-gray-300">Social Media Management</span></li>
+                        <li><span class="text-gray-300">Performance Marketing</span></li>
+                        <li><span class="text-gray-300">Branding & Content Creation</span></li>
+                        <li><span class="text-gray-300">Website Development & SEO</span></li>
+                        <li><span class="text-gray-300">Strategy & Consulting</span></li>
+                        <li><span class="text-gray-300">Data Tracking & Reporting</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="fade-in">
+                    <h4 class="text-xl font-semibold mb-6">Contact Info</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-advibe-pink"></i>
+                            <span class="text-gray-300">+91 98765 43210</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-advibe-pink"></i>
+                            <span class="text-gray-300">hello@advibe.com</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-advibe-pink mt-1"></i>
+                            <span class="text-gray-300">123 Business Hub, Tech City<br>Mumbai, Maharashtra 400001</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="border-gray-700 my-12">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center fade-in">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2024 Advibe. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-advibe-pink transition-all">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-advibe-pink transition-all">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-advibe-pink transition-all">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page Navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Find and activate the corresponding nav link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.textContent.toLowerCase().includes(pageId) || 
+                    (pageId === 'home' && link.textContent.toLowerCase() === 'home') ||
+                    (pageId === 'about' && link.textContent.toLowerCase() === 'about') ||
+                    (pageId === 'services' && link.textContent.toLowerCase() === 'services') ||
+                    (pageId === 'plans' && link.textContent.toLowerCase().includes('plans')) ||
+                    (pageId === 'blog' && link.textContent.toLowerCase() === 'blog') ||
+                    (pageId === 'contact' && link.textContent.toLowerCase() === 'contact')) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Re-trigger fade-in animations
+            setTimeout(() => {
+                const elements = document.querySelectorAll('#' + pageId + ' .fade-in');
+                elements.forEach(el => {
+                    el.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advibe - Digital Marketing Agency | Vibe Your Brand. Grow Your Reach.</title>
+    <meta name="description" content="Advibe helps brands shine with creative content, targeted ads, and growth strategies. Professional digital marketing services including social media, SEO, and performance marketing.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-light': '#F9D4E7',
+                        'primary-mid': '#F1A6C9', 
+                        'primary-blue': '#A2C4F5',
+                        'accent-pink': '#F47A9B',
+                        'accent-blue': '#85BCEB',
+                        'text-dark': '#1A1A1A'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #F9D4E7 0%, #F1A6C9 50%, #A2C4F5 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #F47A9B 0%, #85BCEB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, #F47A9B 0%, #85BCEB 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #85BCEB 0%, #F47A9B 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(244, 122, 155, 0.3);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-animate {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .section-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans text-text-dark">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text">Advibe</div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-text-dark hover:text-accent-pink transition-colors">Home</a>
+                    <a href="#about" class="text-text-dark hover:text-accent-pink transition-colors">About</a>
+                    <a href="#services" class="text-text-dark hover:text-accent-pink transition-colors">Services</a>
+                    <a href="#plans" class="text-text-dark hover:text-accent-pink transition-colors">Plans</a>
+                    <a href="#contact" class="text-text-dark hover:text-accent-pink transition-colors">Contact</a>
+                </div>
+                
+                <button class="btn-gradient text-white px-6 py-2 rounded-full font-medium hidden md:block">
+                    Get Free Consultation
+                </button>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-text-dark" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-4 pb-4 hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="text-text-dark hover:text-accent-pink transition-colors">Home</a>
+                    <a href="#about" class="text-text-dark hover:text-accent-pink transition-colors">About</a>
+                    <a href="#services" class="text-text-dark hover:text-accent-pink transition-colors">Services</a>
+                    <a href="#plans" class="text-text-dark hover:text-accent-pink transition-colors">Plans</a>
+                    <a href="#contact" class="text-text-dark hover:text-accent-pink transition-colors">Contact</a>
+                    <button class="btn-gradient text-white px-6 py-2 rounded-full font-medium w-full">
+                        Get Free Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-bold text-text-dark mb-6 animate-fade-in">
+                    Vibe Your Brand.<br>
+                    <span class="gradient-text">Grow Your Reach.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-text-dark/80 mb-8 animate-slide-up">
+                    We help brands shine with creative content, targeted ads, and growth strategies.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+                    <button class="btn-gradient text-white px-8 py-4 rounded-full font-semibold text-lg">
+                        Get a Free Consultation
+                    </button>
+                    <button class="border-2 border-text-dark text-text-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-text-dark hover:text-white transition-all">
+                        View Plans
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section id="about-preview" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center section-animate">
+                <h2 class="text-4xl font-bold text-text-dark mb-6">About Advibe</h2>
+                <p class="text-lg text-text-dark/80 mb-4">
+                    Advibe is a dynamic digital marketing agency that specializes in creating impactful brand experiences and driving measurable growth for businesses of all sizes.
+                </p>
+                <p class="text-lg text-text-dark/80 mb-8">
+                    We combine creativity with data-driven strategies to help your brand stand out in the digital landscape and connect authentically with your target audience.
+                </p>
+                <button class="btn-gradient text-white px-8 py-3 rounded-full font-semibold">
+                    Read More About Us
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-animate">
+                <h2 class="text-4xl font-bold text-text-dark mb-6">Our Services Snapshot</h2>
+                <p class="text-xl text-text-dark/80 max-w-2xl mx-auto">
+                    Comprehensive digital marketing solutions to elevate your brand and drive results
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover transition-all duration-300 section-animate">
+                    <div class="text-accent-pink text-4xl mb-4">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-dark mb-4">Social Media Management</h3>
+                    <p class="text-text-dark/70 mb-6">
+                        Complete social media strategy, content creation, community management, and performance optimization across all major platforms.
+                    </p>
+                    <button class="text-accent-pink font-semibold hover:text-accent-blue transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover transition-all duration-300 section-animate">
+                    <div class="text-accent-blue text-4xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-dark mb-4">Performance Marketing</h3>
+                    <p class="text-text-dark/70 mb-6">
+                        Data-driven advertising campaigns across Google Ads, Facebook Ads, and other platforms to maximize ROI and conversions.
+                    </p>
+                    <button class="text-accent-pink font-semibold hover:text-accent-blue transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover transition-all duration-300 section-animate">
+                    <div class="text-accent-pink text-4xl mb-4">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-dark mb-4">Branding & Content Creation</h3>
+                    <p class="text-text-dark/70 mb-6">
+                        Creative brand identity development, logo design, visual content creation, and compelling copywriting that resonates with your audience.
+                    </p>
+                    <button class="text-accent-pink font-semibold hover:text-accent-blue transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover transition-all duration-300 section-animate">
+                    <div class="text-accent-blue text-4xl mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-dark mb-4">Website Development & SEO</h3>
+                    <p class="text-text-dark/70 mb-6">
+                        Modern, responsive website development with comprehensive SEO optimization to improve search rankings and user experience.
+                    </p>
+                    <button class="text-accent-pink font-semibold hover:text-accent-blue transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover transition-all duration-300 section-animate">
+                    <div class="text-accent-pink text-4xl mb-4">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-dark mb-4">Strategy & Consulting</h3>
+                    <p class="text-text-dark/70 mb-6">
+                        Strategic marketing planning, market analysis, competitor research, and expert consulting to guide your digital transformation.
+                    </p>
+                    <button class="text-accent-pink font-semibold hover:text-accent-blue transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover transition-all duration-300 section-animate">
+                    <div class="text-accent-blue text-4xl mb-4">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-dark mb-4">Data Tracking & Reporting</h3>
+                    <p class="text-text-dark/70 mb-6">
+                        Comprehensive analytics setup, performance monitoring, and detailed reporting to track ROI and optimize campaign performance.
+                    </p>
+                    <button class="text-accent-pink font-semibold hover:text-accent-blue transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Overview Section -->
+    <section id="plans" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-animate">
+                <h2 class="text-4xl font-bold text-text-dark mb-6">Choose Your Growth Plan</h2>
+                <p class="text-xl text-text-dark/80 max-w-2xl mx-auto">
+                    Flexible pricing plans designed to scale with your business needs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Silver Plan -->
+                <div class="bg-white border-2 border-gray-200 p-8 rounded-2xl hover:border-accent-pink transition-all duration-300 section-animate">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-text-dark mb-2">Silver Plan</h3>
+                        <div class="text-4xl font-bold text-accent-pink mb-4">₹15,000<span class="text-lg text-text-dark/60">/month</span></div>
+                        <p class="text-text-dark/70">Perfect for small businesses getting started with social media</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-pink mr-3"></i>
+                            8 Social Media Posts
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-pink mr-3"></i>
+                            2 Instagram Reels
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-pink mr-3"></i>
+                            8 Instagram Stories
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-pink mr-3"></i>
+                            Instagram & Facebook Management
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-pink mr-3"></i>
+                            Custom Flyers & Reel Editing
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-pink mr-3"></i>
+                            Post Boosting & 250 Pamphlets
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-pink mr-3"></i>
+                            3 Custom Banners
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full btn-gradient text-white py-3 rounded-full font-semibold">
+                        Subscribe Now
+                    </button>
+                </div>
+                
+                <!-- Gold Plan -->
+                <div class="bg-white border-2 border-accent-pink p-8 rounded-2xl transform scale-105 shadow-2xl section-animate">
+                    <div class="text-center mb-8">
+                        <div class="bg-accent-pink text-white px-4 py-1 rounded-full text-sm font-semibold mb-4 inline-block">Most Popular</div>
+                        <h3 class="text-2xl font-bold text-text-dark mb-2">Gold Plan</h3>
+                        <div class="text-4xl font-bold text-accent-pink mb-4">₹21,000<span class="text-lg text-text-dark/60">/month</span></div>
+                        <p class="text-text-dark/70">Comprehensive solution for growing businesses</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-pink mr-3"></i>
+                            12 Social Media Posts
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-pink mr-3"></i>
+                            4 Instagram Reels
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-pink mr-3"></i>
+                            12 Instagram Stories
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-pink mr-3"></i>
+                            Instagram, Facebook & LinkedIn
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-pink mr-3"></i>
+                            Google My Business Management
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-pink mr-3"></i>
+                            Lead Generation & 350 Pamphlets
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-pink mr-3"></i>
+                            5 Custom Banners
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full btn-gradient text-white py-3 rounded-full font-semibold">
+                        Subscribe Now
+                    </button>
+                </div>
+                
+                <!-- Diamond Plan -->
+                <div class="bg-white border-2 border-gray-200 p-8 rounded-2xl hover:border-accent-blue transition-all duration-300 section-animate">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-text-dark mb-2">Diamond Plan</h3>
+                        <div class="text-4xl font-bold text-accent-blue mb-4">₹36,000<span class="text-lg text-text-dark/60">/month</span></div>
+                        <p class="text-text-dark/70">Complete digital marketing solution for enterprises</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-blue mr-3"></i>
+                            12 Posts + 3 LinkedIn Posts
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-blue mr-3"></i>
+                            8 Instagram Reels
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-blue mr-3"></i>
+                            16 Instagram Stories
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-blue mr-3"></i>
+                            All Platforms + Website + Google Ads
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-blue mr-3"></i>
+                            Complete SEO Optimization
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-blue mr-3"></i>
+                            500 Pamphlets & Lead Generation
+                        </li>
+                        <li class="flex items-center text-text-dark/80">
+                            <i class="fas fa-check text-accent-blue mr-3"></i>
+                            7 Custom Banners
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full btn-gradient text-white py-3 rounded-full font-semibold">
+                        Subscribe Now
+                    </button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 section-animate">
+                <p class="text-text-dark/70 mb-4">Need something custom? We've got you covered.</p>
+                <button class="border-2 border-text-dark text-text-dark px-8 py-3 rounded-full font-semibold hover:bg-text-dark hover:text-white transition-all">
+                    Get Custom Quote
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials Section -->
+    <section id="testimonials" class="py-20 gradient-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-animate">
+                <h2 class="text-4xl font-bold text-text-dark mb-6">What Our Clients Say</h2>
+                <p class="text-xl text-text-dark/80 max-w-2xl mx-auto">
+                    Real results from real businesses who trusted Advibe with their digital growth
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg section-animate">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accent-pink rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            R
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-text-dark">Rajesh Kumar</h4>
+                            <p class="text-text-dark/60 text-sm">CEO, TechStart Solutions</p>
+                        </div>
+                    </div>
+                    <div class="text-accent-pink mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-text-dark/80">
+                        "Advibe transformed our online presence completely. Our social media engagement increased by 300% in just 3 months, and we're getting quality leads daily now."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg section-animate">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accent-blue rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            P
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-text-dark">Priya Sharma</h4>
+                            <p class="text-text-dark/60 text-sm">Founder, Bloom Boutique</p>
+                        </div>
+                    </div>
+                    <div class="text-accent-pink mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-text-dark/80">
+                        "The team at Advibe understands our brand perfectly. Their creative content and strategic approach helped us reach our target audience effectively. ROI has been amazing!"
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg section-animate">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accent-pink rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            A
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-text-dark">Arjun Patel</h4>
+                            <p class="text-text-dark/60 text-sm">Director, FitLife Gym</p>
+                        </div>
+                    </div>
+                    <div class="text-accent-pink mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-text-dark/80">
+                        "Professional, reliable, and results-driven. Advibe's performance marketing campaigns brought us 50+ new memberships last month. Highly recommended!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section id="blog" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-animate">
+                <h2 class="text-4xl font-bold text-text-dark mb-6">Latest Insights</h2>
+                <p class="text-xl text-text-dark/80 max-w-2xl mx-auto">
+                    Stay updated with the latest digital marketing trends, tips, and strategies
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <article class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition-all duration-300 section-animate">
+                    <!-- Modern office workspace with laptops and marketing charts -->
+                    <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Digital marketing workspace with analytics" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="text-accent-pink text-sm font-semibold mb-2">MARKETING TIPS</div>
+                        <h3 class="text-xl font-bold text-text-dark mb-3">5 Social Media Trends That Will Dominate 2024</h3>
+                        <p class="text-text-dark/70 mb-4">Discover the emerging social media trends that successful brands are using to stay ahead of the competition...</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-text-dark/60 text-sm">Jan 15, 2024</span>
+                            <button class="text-accent-pink font-semibold hover:text-accent-blue transition-colors">
+                                Read More <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition-all duration-300 section-animate">
+                    <!-- Person analyzing data on multiple screens -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Data analytics dashboard with performance metrics" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="text-accent-blue text-sm font-semibold mb-2">CASE STUDY</div>
+                        <h3 class="text-xl font-bold text-text-dark mb-3">How We Increased ROI by 250% for Local Restaurant</h3>
+                        <p class="text-text-dark/70 mb-4">A detailed breakdown of our strategic approach that transformed a struggling restaurant into a local success story...</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-text-dark/60 text-sm">Jan 12, 2024</span>
+                            <button class="text-accent-pink font-semibold hover:text-accent-blue transition-colors">
+                                Read More <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Blog Post 3 -->
+                <article class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition-all duration-300 section-animate">
+                    <!-- Creative team brainstorming with sticky notes and ideas -->
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Creative brainstorming session with team collaboration" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="text-accent-pink text-sm font-semibold mb-2">STRATEGY</div>
+                        <h3 class="text-xl font-bold text-text-dark mb-3">Building Brand Identity in the Digital Age</h3>
+                        <p class="text-text-dark/70 mb-4">Essential strategies for creating a memorable brand identity that resonates with your target audience online...</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-text-dark/60 text-sm">Jan 10, 2024</span>
+                            <button class="text-accent-pink font-semibold hover:text-accent-blue transition-colors">
+                                Read More <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-12 section-animate">
+                <button class="btn-gradient text-white px-8 py-3 rounded-full font-semibold">
+                    View All Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner Section -->
+    <section class="py-20 gradient-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-4xl mx-auto section-animate">
+                <h2 class="text-4xl md:text-5xl font-bold text-text-dark mb-6">
+                    Let's Vibe Your Brand Today!
+                </h2>
+                <p class="text-xl text-text-dark/80 mb-8">
+                    Ready to transform your digital presence and accelerate your growth? 
+                    Let's create something amazing together.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button class="btn-gradient text-white px-8 py-4 rounded-full font-semibold text-lg">
+                        Start Your Journey
+                    </button>
+                    <button class="border-2 border-text-dark text-text-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-text-dark hover:text-white transition-all">
+                        Schedule a Call
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 section-animate">
+                <h2 class="text-4xl font-bold text-text-dark mb-6">Get In Touch</h2>
+                <p class="text-xl text-text-dark/80 max-w-2xl mx-auto">
+                    Ready to elevate your brand? Contact us today for a free consultation
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Information -->
+                <div class="section-animate">
+                    <h3 class="text-2xl font-bold text-text-dark mb-6">Let's Connect</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-accent-pink/10 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-accent-pink"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-dark">Phone</h4>
+                                <p class="text-text-dark/70">+91 98765 43210</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-accent-blue/10 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-accent-blue"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-dark">Email</h4>
+                                <p class="text-text-dark/70">hello@advibe.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-accent-pink/10 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-accent-pink"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-text-dark">Office</h4>
+                                <p class="text-text-dark/70">123 Digital Street, Marketing District<br>Mumbai, Maharashtra 400001</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map placeholder -->
+                    <div class="mt-8 bg-gray-200 h-64 rounded-2xl flex items-center justify-center">
+                        <div class="text-center text-text-dark/60">
+                            <i class="fas fa-map text-4xl mb-2"></i>
+                            <p>Google Maps Integration</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="section-animate">
+                    <form class="space-y-6" data-form="contact">
+                        <div>
+                            <label for="name" class="block text-text-dark font-semibold mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-accent-pink focus:ring-2 focus:ring-accent-pink/20 outline-none transition-all" placeholder="Your full name">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-text-dark font-semibold mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-accent-pink focus:ring-2 focus:ring-accent-pink/20 outline-none transition-all" placeholder="your@email.com">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-text-dark font-semibold mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-accent-pink focus:ring-2 focus:ring-accent-pink/20 outline-none transition-all" placeholder="+91 98765 43210">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-text-dark font-semibold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-accent-pink focus:ring-2 focus:ring-accent-pink/20 outline-none transition-all resize-none" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full btn-gradient text-white py-4 rounded-xl font-semibold text-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Form Section -->
+    <section id="inquiry" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-12 section-animate">
+                    <h2 class="text-4xl font-bold text-text-dark mb-6">Quick Inquiry</h2>
+                    <p class="text-xl text-text-dark/80">
+                        Interested in our services? Fill out this quick form and we'll get back to you within 24 hours.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg section-animate">
+                    <form class="space-y-6" data-form="inquiry">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="inquiry-name" class="block text-text-dark font-semibold mb-2">Name</label>
+                                <input type="text" id="inquiry-name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-accent-pink focus:ring-2 focus:ring-accent-pink/20 outline-none transition-all" placeholder="Your name">
+                            </div>
+                            
+                            <div>
+                                <label for="inquiry-email" class="block text-text-dark font-semibold mb-2">Email</label>
+                                <input type="email" id="inquiry-email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-accent-pink focus:ring-2 focus:ring-accent-pink/20 outline-none transition-all" placeholder="your@email.com">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="inquiry-phone" class="block text-text-dark font-semibold mb-2">Phone</label>
+                                <input type="tel" id="inquiry-phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-accent-pink focus:ring-2 focus:ring-accent-pink/20 outline-none transition-all" placeholder="+91 98765 43210">
+                            </div>
+                            
+                            <div>
+                                <label for="business-name" class="block text-text-dark font-semibold mb-2">Business Name</label>
+                                <input type="text" id="business-name" name="business_name" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-accent-pink focus:ring-2 focus:ring-accent-pink/20 outline-none transition-all" placeholder="Your business name">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="plan-interest" class="block text-text-dark font-semibold mb-2">Plan of Interest</label>
+                            <select id="plan-interest" name="plan_interest" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-accent-pink focus:ring-2 focus:ring-accent-pink/20 outline-none transition-all">
+                                <option value="">Select a plan</option>
+                                <option value="silver">Silver Plan - ₹15,000/month</option>
+                                <option value="gold">Gold Plan - ₹21,000/month</option>
+                                <option value="diamond">Diamond Plan - ₹36,000/month</option>
+                                <option value="custom">Custom Plan</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="inquiry-message" class="block text-text-dark font-semibold mb-2">Message</label>
+                            <textarea id="inquiry-message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:border-accent-pink focus:ring-2 focus:ring-accent-pink/20 outline-none transition-all resize-none" placeholder="Tell us about your requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full btn-gradient text-white py-4 rounded-xl font-semibold text-lg">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-3xl font-bold gradient-text mb-4">Advibe</div>
+                    <p class="text-white/70 mb-4">
+                        Helping brands shine with creative content, targeted ads, and growth strategies.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white/70 hover:text-accent-pink transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white/70 hover:text-accent-pink transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white/70 hover:text-accent-pink transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white/70 hover:text-accent-pink transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2 text-white/70">
+                        <li><a href="#" class="hover:text-accent-pink transition-colors">Social Media Management</a></li>
+                        <li><a href="#" class="hover:text-accent-pink transition-colors">Performance Marketing</a></li>
+                        <li><a href="#" class="hover:text-accent-pink transition-colors">Branding & Content</a></li>
+                        <li><a href="#" class="hover:text-accent-pink transition-colors">Website & SEO</a></li>
+                        <li><a href="#" class="hover:text-accent-pink transition-colors">Strategy & Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Company</h4>
+                    <ul class="space-y-2 text-white/70">
+                        <li><a href="#about" class="hover:text-accent-pink transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-accent-pink transition-colors">Our Services</a></li>
+                        <li><a href="#plans" class="hover:text-accent-pink transition-colors">Pricing Plans</a></li>
+                        <li><a href="#blog" class="hover:text-accent-pink transition-colors">Blog</a></li>
+                        <li><a href="#contact" class="hover:text-accent-pink transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-white/70">
+                        <li>
+                            <i class="fas fa-phone mr-2"></i>
+                            +91 98765 43210
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope mr-2"></i>
+                            hello@advibe.com
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Mumbai, Maharashtra
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-8 pt-8 text-center text-white/70">
+                <p>&copy; 2024 Advibe Digital Marketing Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // TODO: Implement proper form validation and submission
+        // TODO: Add smooth scroll behavior for navigation links
+        // TODO: Implement intersection observer for animations
+        // TODO: Add Google Maps integration for contact page
+        
+        (function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all section-animate elements
+            const animateElements = document.querySelectorAll('.section-animate');
+            animateElements.forEach(function(element) {
+                observer.observe(element);
+            });
+            
+            // Smooth scroll for navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - 80; // Account for fixed nav
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+            
+            // Form submission handlers (placeholder)
+            const contactForm = document.querySelector('form[data-form="contact"]');
+            const inquiryForm = document.querySelector('form[data-form="inquiry"]');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement actual form submission
+                    alert('Thank you for your message! We\'ll get back to you soon.');
+                });
+            }
+            
+            if (inquiryForm) {
+                inquiryForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement actual form submission
+                    alert('Thank you for your inquiry! We\'ll contact you within 24 hours.');
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

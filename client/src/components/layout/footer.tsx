@@ -115,18 +115,22 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-advibe-pink" />
-                <span className="text-gray-300">+91 98765 43210</span>
+                <span className="text-gray-300">+91 75749 68609</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="h-5 w-5 text-advibe-pink" />
+                <span className="text-gray-300">+91 98790 02715</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-advibe-pink" />
-                <span className="text-gray-300">hello@advibe.com</span>
+                <span className="text-gray-300">connect@advibe.club</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-advibe-pink mt-1" />
                 <span className="text-gray-300">
-                  123 Business Hub, Tech City
+                  B-1/302 Sarthak Resideny, Pal
                   <br />
-                  Mumbai, Maharashtra 400001
+                  Surat, Gujarat 394510
                 </span>
               </div>
             </div>
@@ -136,7 +140,7 @@ export default function Footer() {
         <hr className="border-gray-700 my-12" />
 
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 mb-4 md:mb-0">© 2024 Advibe. All rights reserved.</p>
+          <p className="text-gray-400 mb-4 md:mb-0">© 2025 Advibe. All rights reserved.</p>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-400 hover:text-advibe-pink transition-all">
               Privacy Policy

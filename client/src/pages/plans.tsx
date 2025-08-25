@@ -24,7 +24,6 @@ export default function Plans() {
         "Post Boosting & Promotion",
         "250 Printed Pamphlets",
         "3 Marketing Banners",
-        "Monthly Performance Report",
       ],
     },
     {
