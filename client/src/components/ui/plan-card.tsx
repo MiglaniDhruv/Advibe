@@ -31,7 +31,12 @@ export default function PlanCard({
       } ${
         isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{
+        transitionDelay: `${delay}ms`,
+        backgroundImage: `url("/src/assets/Blue Pink Gradient Kindness Day Flyer.svg")`,
+        backgroundSize: "fit",
+        backgroundPosition: "center",
+      }}
     >
       {isPopular && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">

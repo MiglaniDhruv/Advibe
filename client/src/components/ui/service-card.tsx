@@ -14,7 +14,7 @@ export default function ServiceCard({ icon, title, description, delay = 0 }: Ser
   return (
     <div
       ref={elementRef}
-      className={`bg-white p-8 rounded-2xl shadow-lg card-hover transition-all duration-400 hover:border border-blue-500 ${
+      className={`bg-white p-8 rounded-2xl shadow-lg card-hover transition-all duration-400 hover:border-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] ${
         isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8" 
       }`}
       style={{ transitionDelay: `${delay}ms` }}

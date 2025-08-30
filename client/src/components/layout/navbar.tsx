@@ -27,22 +27,23 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
+          
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img 
-              src={advibeLogoPath} 
-              alt="Advibe Digital Marketing Agency Logo" 
-              className="w-12 h-12 rounded-full object-cover"
+            <img
+              src={advibeLogoPath}
+              alt="Advibe Digital Marketing Agency Logo"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover"
             />
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-6 lg:space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`px-3 py-2 rounded-lg transition-all font-medium ${
+                className={`px-3 py-2 rounded-lg transition-all text-sm lg:text-base font-medium ${
                   isActive(item.href)
                     ? "text-advibe-pink bg-advibe-pink/10"
                     : "text-advibe-dark hover:text-advibe-pink"
@@ -53,10 +54,10 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button (Desktop) */}
           <div className="hidden md:block">
             <Link href="/inquiry">
-              <Button className="btn-gradient text-white font-medium">
+              <Button className="btn-gradient text-white font-medium text-sm lg:text-base px-4 lg:px-6">
                 Get Free Consultation
               </Button>
             </Link>
@@ -75,32 +76,34 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
-            <div className="flex flex-col space-y-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`px-4 py-3 rounded-lg transition-all font-medium ${
-                    isActive(item.href)
-                      ? "text-advibe-pink bg-advibe-pink/10"
-                      : "text-advibe-dark hover:text-advibe-pink"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <Link href="/inquiry" onClick={() => setIsMenuOpen(false)}>
-                <Button className="btn-gradient text-white font-medium w-full mt-4">
-                  Get Free Consultation
-                </Button>
+        {/* Mobile Menu (animated dropdown) */}
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="flex flex-col py-4 space-y-3 border-t border-gray-200">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={`px-4 py-3 rounded-lg transition-all font-medium ${
+                  isActive(item.href)
+                    ? "text-advibe-pink bg-advibe-pink/10"
+                    : "text-advibe-dark hover:text-advibe-pink"
+                }`}
+              >
+                {item.name}
               </Link>
-            </div>
+            ))}
+            <Link href="/inquiry" onClick={() => setIsMenuOpen(false)}>
+              <Button className="btn-gradient text-white font-medium w-full mt-4">
+                Get Free Consultation
+              </Button>
+            </Link>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

@@ -1,6 +1,7 @@
 import { Star } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
+
 interface TestimonialCardProps {
   name: string;
   company: string;
