@@ -3,6 +3,12 @@ import { Link } from "wouter";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { Target, Eye, Check, Star, Heart, Users } from "lucide-react";
 
+// ✅ Floating icons
+import ShareIcon from "@/assets/share.svg";
+import SEOIcon from "@/assets/seo.svg";
+import AddsIcon from "@/assets/adds.svg";
+import AnalyticsIcon from "@/assets/analytics.svg";
+
 export default function About() {
   const heroRef = useIntersectionObserver();
   const contentRef = useIntersectionObserver();
@@ -48,13 +54,13 @@ export default function About() {
     },
     {
       icon: <Heart className="h-7 w-7 text-white" />,
-      color: "bg-advibe-blue",
+      color: "bg-advibe-pink",
       title: "Integrity",
       desc: "Transparency and honesty are at the heart of our client relationships and work ethic.",
     },
     {
       icon: <Users className="h-7 w-7 text-white" />,
-      color: "bg-advibe-dark",
+      color: "bg-advibe-pink",
       title: "Collaboration",
       desc: "We believe the best results come from teamwork—within our team and with our clients.",
     },
@@ -62,41 +68,30 @@ export default function About() {
 
   return (
     <div className="w-full bg-gradient-to-b from-white to-gray-50">
-      {/* Hero with background */}
+      {/* Hero */}
       <section className="relative w-full h-[70vh] flex items-center justify-center text-center overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80"
             alt="Digital marketing background"
             className="w-full h-full object-cover"
           />
-          {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/60 to-black/50" />
         </div>
 
-        {/* Content */}
         <div
           ref={heroRef.elementRef}
           className={`relative z-10 max-w-4xl px-6 transition-all duration-700 ${
             heroRef.isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
-            About <span className="text-advibe-pink">Advibe</span>
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg fade-slide">
+            About <span className="text-advibe-pink fade-slide">Advibe</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
             We're not just another marketing agency. We're storytellers, strategists, and growth partners who
             believe in the power of authentic brand experiences.
           </p>
-        </div>
-
-        {/* Floating accents */}
-        <div className="absolute top-10 left-10 animate-pulse">
-          <div className="w-16 h-16 rounded-full bg-advibe-pink/40 blur-2xl" />
-        </div>
-        <div className="absolute bottom-10 right-10 animate-bounce">
-          <div className="w-12 h-12 rounded-full bg-advibe-blue/40 blur-xl" />
         </div>
       </section>
 
@@ -109,11 +104,8 @@ export default function About() {
               contentRef.isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            {/* Text */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-advibe-dark mb-8">
-                What is Advibe?
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-advibe-dark mb-8">What is Advibe?</h2>
               <div className="space-y-6 text-base md:text-lg text-advibe-dark/80 leading-relaxed">
                 <p>
                   Advibe is a digital marketing agency founded on the belief that every brand has a unique story worth telling. 
@@ -127,12 +119,11 @@ export default function About() {
                 </p>
               </div>
             </div>
-            {/* Image */}
             <div className="relative">
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
                 alt="Digital Marketing Team"
-                className="rounded-2xl shadow-xl w-full h-[420px] object-cover"
+                className="rounded-2xl shadow-xl w-full h-[420px] object-cover animate-3d-tilt"
               />
             </div>
           </div>
@@ -152,7 +143,7 @@ export default function About() {
             {expertise.map((item, idx) => (
               <div
                 key={idx}
-                className="rounded-2xl shadow-md overflow-hidden bg-white hover:shadow-xl transition"
+                className="rounded-2xl shadow-md overflow-hidden bg-white hover:border-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]"
               >
                 <img src={item.img} alt={item.title} className="w-full h-44 object-cover" />
                 <div className="p-6">
@@ -173,7 +164,7 @@ export default function About() {
             missionRef.isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="p-8 bg-white rounded-2xl shadow-lg">
+          <div className="p-8 bg-white rounded-2xl shadow-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB] card-tilt">
             <h3 className="text-2xl font-bold text-advibe-dark mb-4 flex items-center">
               <div className="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center mr-3">
                 <Target className="h-6 w-6 text-white" />
@@ -186,7 +177,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="p-8 bg-white rounded-2xl shadow-lg">
+          <div className="p-8 bg-white rounded-2xl shadow-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB] card-tilt">
             <h3 className="text-2xl font-bold text-advibe-dark mb-4 flex items-center">
               <div className="w-10 h-10 bg-advibe-blue rounded-lg flex items-center justify-center mr-3">
                 <Eye className="h-6 w-6 text-white" />
@@ -205,7 +196,7 @@ export default function About() {
       <section className="py-24 bg-gradient-to-r from-advibe-blue/5 via-white to-advibe-pink/5">
         <div
           ref={valuesRef.elementRef}
-          className={`max-w-6xl mx-auto px-6 text-center transition-all duration-700 ${
+          className={`max-w-6xl mx-auto px-6 text-center transition-all duration-700  ${
             valuesRef.isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -214,7 +205,7 @@ export default function About() {
             {coreValues.map((val, idx) => (
               <div
                 key={idx}
-                className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition"
+                className="p-8 bg-white rounded-2xl shadow-md hover:border-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]"
               >
                 <div
                   className={`w-14 h-14 ${val.color} rounded-full flex items-center justify-center mx-auto mb-5`}
@@ -259,11 +250,17 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-gray-50 py-24">
+      {/* CTA with Floating SVGs */}
+      <section className="relative bg-gray-50 py-24 overflow-hidden">
+        {/* Floating Icons */}
+        <img src={ShareIcon} alt="Share" className="absolute w-48 h-60 top-5 left-20 animate-float-glow" />
+        <img src={SEOIcon} alt="SEO" className="absolute w-1/5 h-3/6 bottom-3 left-52 animate-float-glow" />
+        <img src={AddsIcon} alt="Ads" className="absolute w-60 h-48 top-5 right-20 animate-float-glow" />
+        <img src={AnalyticsIcon} alt="Analytics" className="absolute w-2/6 h-3/6 bottom-3 right-52 animate-float-glow" />
+
         <div
           ref={ctaRef.elementRef}
-          className={`max-w-5xl mx-auto px-6 text-center transition-all duration-700 ${
+          className={`max-w-5xl mx-auto px-6 text-center relative z-10 transition-all duration-700 ${
             ctaRef.isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >

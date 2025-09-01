@@ -255,3 +255,114 @@
     border-color: var(--advibe-accent-blue);
   }
 }
+
+@keyframes float-glow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 5px rgba(255,105,180,0.4));
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg) scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(255,105,180,0.8));
+  }
+}
+
+.animate-float-glow {
+  animation: float-glow 6s ease-in-out infinite;
+}
+
+@keyframes tilt3d {
+  0% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+  }
+  25% {
+    transform: perspective(1000px) rotateX(3deg) rotateY(-3deg) scale(1.02);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+  }
+  75% {
+    transform: perspective(1000px) rotateX(-3deg) rotateY(3deg) scale(1.02);
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+  }
+}
+
+.animate-3d-tilt {
+  animation: tilt3d 12s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.card-tilt {
+  transition: transform 0.4s ease;
+}
+.card-tilt:hover {
+  transform: perspective(1000px) rotateX(6deg) rotateY(-6deg) scale(1.02);
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px rgba(140,204,236,0.5));
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 15px rgba(223,152,187,0.7));
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes fade-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-slide-up {
+  animation: fade-slide-up 0.8s ease-out forwards;
+}
+
+.card-tilt {
+  transition: transform 0.4s ease;
+}
+.card-tilt:hover {
+  transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) scale(1.02);
+}
+
+.card-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.card-shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 4s infinite;
+}
+@keyframes shimmer {
+  0% { left: -150%; }
+  100% { left: 150%; }
+}
+
+
+@keyframes fade-slide {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.fade-slide {
+  animation: fade-slide 0.8s ease forwards;
+}
+

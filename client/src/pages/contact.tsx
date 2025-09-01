@@ -79,7 +79,7 @@ export default function Contact() {
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-advibe-dark mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-advibe-dark mb-6 fade-slide">
               Contact Us
             </h1>
             <p className="text-xl text-advibe-dark/80 leading-relaxed">

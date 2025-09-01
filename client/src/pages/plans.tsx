@@ -91,7 +91,7 @@ export default function Plans() {
               heroRef.isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-advibe-dark mb-6">Plans & Pricing</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-advibe-dark mb-6 fade-slide">Plans & Pricing</h1>
             <p className="text-xl text-advibe-dark/80 leading-relaxed">
               Choose the perfect plan for your business needs. All plans include dedicated account management and transparent reporting.
             </p>
@@ -114,6 +114,11 @@ export default function Plans() {
                 className={`bg-white rounded-3xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl ${
                   plan.isPopular ? "border-2 border-advibe-pink relative" : ""
                 }`}
+                style={{
+        backgroundImage: `url("/src/assets/Blue Pink Gradient Kindness Day Flyer.svg")`,
+        backgroundSize: "fit",
+        backgroundPosition: "center",
+      }}
               >
                 {plan.isPopular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">

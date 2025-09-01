@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -14,18 +14,79 @@ import Blog from "@/pages/blog";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 
+// ✅ Import framer-motion
+import { AnimatePresence, motion } from "framer-motion";
+
 function Router() {
+  const [location] = useLocation();
+
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/services" component={Services} />
-      <Route path="/plans" component={Plans} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/inquiry" component={Inquiry} />
-      <Route path="/blog" component={Blog} />
-      <Route component={NotFound} />
-    </Switch>
+    <AnimatePresence mode="wait">
+      <Switch location={location} key={location}>
+        <Route path="/">
+          <PageWrapper>
+            <Home />
+          </PageWrapper>
+        </Route>
+
+        <Route path="/about">
+          <PageWrapper>
+            <About />
+          </PageWrapper>
+        </Route>
+
+        <Route path="/services">
+          <PageWrapper>
+            <Services />
+          </PageWrapper>
+        </Route>
+
+        <Route path="/plans">
+          <PageWrapper>
+            <Plans />
+          </PageWrapper>
+        </Route>
+
+        <Route path="/contact">
+          <PageWrapper>
+            <Contact />
+          </PageWrapper>
+        </Route>
+
+        <Route path="/inquiry">
+          <PageWrapper>
+            <Inquiry />
+          </PageWrapper>
+        </Route>
+
+        <Route path="/blog">
+          <PageWrapper>
+            <Blog />
+          </PageWrapper>
+        </Route>
+
+        <Route>
+          <PageWrapper>
+            <NotFound />
+          </PageWrapper>
+        </Route>
+      </Switch>
+    </AnimatePresence>
+  );
+}
+
+// ✅ Animation wrapper for all pages
+function PageWrapper({ children }: { children: React.ReactNode }) {
+  return (
+    <motion.div
+      className="min-h-screen"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -30 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+    >
+      {children}
+    </motion.div>
   );
 }
 

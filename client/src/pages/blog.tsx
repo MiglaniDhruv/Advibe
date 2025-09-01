@@ -100,7 +100,7 @@ export default function Blog() {
               heroRef.isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-advibe-dark mb-6">Marketing Insights</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-advibe-dark mb-6 fade-slide">Marketing Insights</h1>
             <p className="text-xl text-advibe-dark/80 leading-relaxed">
               Stay ahead of the curve with our latest marketing tips, industry trends, and success stories.
             </p>

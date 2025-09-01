@@ -86,7 +86,7 @@ export default function Inquiry() {
               heroRef.isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-advibe-dark mb-6">Get Your Free Consultation</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-advibe-dark mb-6 fade-slide">Get Your Free Consultation</h1>
             <p className="text-xl text-advibe-dark/80 leading-relaxed">
               Take the first step towards transforming your digital presence. Fill out the form below and our experts will get back to you within 24 hours.
             </p>
