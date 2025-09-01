@@ -21,25 +21,25 @@ export default function Hero() {
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold hero-text leading-tight mb-6">
+            <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold hero-text leading-tight mb-6 ml-20">
               Vibe Your Brand.
               <br />
               <span className="gradient-text">Grow Your Reach.</span>
             </h1>
-            <p className="text-[clamp(1rem,2vw,1.25rem)] text-advibe-dark/80 mb-8 leading-relaxed max-w-prose">
+            <p className="text-[clamp(1rem,2vw,1.25rem)] text-advibe-dark/80 mb-8 leading-relaxed max-w-prose ml-20">
               We help brands shine with creative content, targeted ads, and
               growth strategies that deliver real results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/inquiry">
-                <Button className="btn-gradient text-white font-semibold text-[clamp(0.9rem,1.5vw,1.125rem)] shadow-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full">
+                <Button className="btn-gradient text-white font-semibold text-[clamp(0.9rem,1.5vw,1.125rem)] shadow-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full ml-20">
                   Get a Free Consultation
                 </Button>
               </Link>
               <Link href="/plans">
                 <Button
                   variant="outline"
-                  className="px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-advibe-pink text-advibe-pink font-semibold text-[clamp(0.9rem,1.5vw,1.125rem)] hover:bg-advibe-pink hover:text-white transition-all"
+                  className="px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-advibe-pink text-advibe-pink font-semibold text-[clamp(0.9rem,1.5vw,1.125rem)] hover:bg-advibe-pink hover:text-white transition-all ml-10"
                 >
                   View Plans
                 </Button>

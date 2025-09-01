@@ -34,8 +34,8 @@ export default function PlanCard({
       style={{
         transitionDelay: `${delay}ms`,
         backgroundImage: `url("/src/assets/Blue Pink Gradient Kindness Day Flyer.svg")`,
-        backgroundSize: "fit",
-        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundPosition: "cover",
       }}
     >
       {isPopular && (

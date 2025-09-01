@@ -290,7 +290,7 @@
 }
 
 .animate-3d-tilt {
-  animation: tilt3d 12s ease-in-out infinite;
+  animation: tilt3d 8s ease-in-out infinite;
   transform-style: preserve-3d;
 }
 
@@ -365,4 +365,6 @@
 .fade-slide {
   animation: fade-slide 0.8s ease forwards;
 }
+
+
 

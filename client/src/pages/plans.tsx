@@ -104,7 +104,7 @@ export default function Plans() {
         <div className="container mx-auto px-4">
           <div
             ref={plansRef.elementRef}
-            className={`grid md:grid-cols-3 gap-8 max-w-7xl mx-auto transition-all duration-700 ${
+            className={`grid md:grid-cols-3 gap-8 max-w-7xl mx-auto transition-all duration-700${
               plansRef.isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -112,28 +112,28 @@ export default function Plans() {
               <div
                 key={plan.name}
                 className={`bg-white rounded-3xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl ${
-                  plan.isPopular ? "border-2 border-advibe-pink relative" : ""
+                  plan.isPopular ? "border-2 border-advibe-pink relative " : ""
                 }`}
                 style={{
         backgroundImage: `url("/src/assets/Blue Pink Gradient Kindness Day Flyer.svg")`,
-        backgroundSize: "fit",
-        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundPosition: "cover",
       }}
               >
                 {plan.isPopular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-advibe-pink to-advibe-blue text-white px-6 py-2 rounded-full text-sm font-semibold">
+                    <span className="bg-gradient-to-r from-advibe-pink to-advibe-blue text-white px-6 py-2 rounded-full text-sm font-semibold ">
                       Most Popular
                     </span>
                   </div>
                 )}
                 
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-advibe-dark mb-2">{plan.name}</h3>
+                  <h3 className="text-4xl font-extrabold mb-2 text-white">{plan.name}</h3>
                   <div className="text-4xl font-bold text-advibe-pink mb-2">
                     {plan.price}
                   </div>
-                  <span className="text-advibe-dark/60">/month</span>
+                  <span className="text-advibe-dark/60 ">/month</span>
                   <p className="text-advibe-dark/70 mt-4">{plan.description}</p>
                 </div>
 

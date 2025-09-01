@@ -13,98 +13,105 @@ import Inquiry from "@/pages/inquiry";
 import Blog from "@/pages/blog";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import SocialMediaBlog from "./pages/SocialMediaBlogs";
 
 // ✅ Import framer-motion
 import { AnimatePresence, motion } from "framer-motion";
 
 function Router() {
-  const [location] = useLocation();
+    const [location] = useLocation();
 
-  return (
-    <AnimatePresence mode="wait">
-      <Switch location={location} key={location}>
-        <Route path="/">
-          <PageWrapper>
-            <Home />
-          </PageWrapper>
-        </Route>
+    return (
+        <AnimatePresence mode="wait">
+            <Switch location={location} key={location}>
+                <Route path="/">
+                    <PageWrapper>
+                        <Home />
+                    </PageWrapper>
+                </Route>
 
-        <Route path="/about">
-          <PageWrapper>
-            <About />
-          </PageWrapper>
-        </Route>
+                <Route path="/about">
+                    <PageWrapper>
+                        <About />
+                    </PageWrapper>
+                </Route>
 
-        <Route path="/services">
-          <PageWrapper>
-            <Services />
-          </PageWrapper>
-        </Route>
+                <Route path="/services">
+                    <PageWrapper>
+                        <Services />
+                    </PageWrapper>
+                </Route>
 
-        <Route path="/plans">
-          <PageWrapper>
-            <Plans />
-          </PageWrapper>
-        </Route>
+                <Route path="/plans">
+                    <PageWrapper>
+                        <Plans />
+                    </PageWrapper>
+                </Route>
 
-        <Route path="/contact">
-          <PageWrapper>
-            <Contact />
-          </PageWrapper>
-        </Route>
+                <Route path="/contact">
+                    <PageWrapper>
+                        <Contact />
+                    </PageWrapper>
+                </Route>
 
-        <Route path="/inquiry">
-          <PageWrapper>
-            <Inquiry />
-          </PageWrapper>
-        </Route>
+                <Route path="/inquiry">
+                    <PageWrapper>
+                        <Inquiry />
+                    </PageWrapper>
+                </Route>
 
-        <Route path="/blog">
-          <PageWrapper>
-            <Blog />
-          </PageWrapper>
-        </Route>
+                <Route path="/blog">
+                    <PageWrapper>
+                        <Blog />
+                    </PageWrapper>
+                </Route>
 
-        <Route>
-          <PageWrapper>
-            <NotFound />
-          </PageWrapper>
-        </Route>
-      </Switch>
-    </AnimatePresence>
-  );
+                <Route path="/blog/:id">
+                    <PageWrapper>
+                        <SocialMediaBlog />
+                    </PageWrapper>
+                </Route>
+
+                <Route>
+                    <PageWrapper>
+                        <NotFound />
+                    </PageWrapper>
+                </Route>
+            </Switch>
+        </AnimatePresence>
+    );
 }
 
 // ✅ Animation wrapper for all pages
 function PageWrapper({ children }: { children: React.ReactNode }) {
-  return (
-    <motion.div
-      className="min-h-screen"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -30 }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
-    >
-      {children}
-    </motion.div>
-  );
+    return (
+        <motion.div
+            className="min-h-screen"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+            {children}
+        </motion.div>
+    );
 }
 
 function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <div className="min-h-screen bg-white">
-          <Navbar />
-          <main>
-            <Router />
-          </main>
-          <Footer />
-          <Toaster />
-        </div>
-      </TooltipProvider>
-    </QueryClientProvider>
-  );
+    return (
+        <QueryClientProvider client={queryClient}>
+            <TooltipProvider>
+                <div className="min-h-screen bg-white">
+                    <Navbar />
+                    <main>
+                        <Router />
+                    </main>
+                    <Footer />
+                    <Toaster />
+                </div>
+            </TooltipProvider>
+        </QueryClientProvider>
+    );
 }
 
 export default App;
