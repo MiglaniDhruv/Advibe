@@ -4,18 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { TrendingUp, Users, Headphones } from "lucide-react";
-import type { InsertInquirySubmission } from "@shared/schema";
 
 export default function Inquiry() {
   const heroRef = useIntersectionObserver();
   const formRef = useIntersectionObserver();
   const benefitsRef = useIntersectionObserver();
-  const { toast } = useToast();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -26,39 +21,25 @@ export default function Inquiry() {
     message: "",
   });
 
-  const inquiryMutation = useMutation({
-    mutationFn: async (data: InsertInquirySubmission) => {
-      const response = await apiRequest("POST", "/api/inquiry", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Inquiry Submitted!",
-        description: "Thank you for your inquiry. We'll contact you within 24 hours with a customized proposal.",
-        duration: 5000,
-      });
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        businessName: "",
-        planInterest: "",
-        message: "",
-      });
-    },
-    onError: (error: Error) => {
-      toast({
-        title: "Error",
-        description: "There was an error submitting your inquiry. Please try again.",
-        variant: "destructive",
-        duration: 5000,
-      });
-    },
-  });
+  // default target number
+  const [targetNumber, setTargetNumber] = useState("917574968609");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    inquiryMutation.mutate(formData);
+
+    const whatsappMessage = `
+📩 New Inquiry:
+👤 Name: ${formData.name}
+📧 Email: ${formData.email}
+📞 Phone: ${formData.phone}
+🏢 Business: ${formData.businessName || "N/A"}
+📌 Plan Interest: ${formData.planInterest || "Not specified"}
+📝 Message: ${formData.message}
+    `;
+
+    // Open WhatsApp with selected number
+    const url = `https://wa.me/${targetNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(url, "_blank");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -86,9 +67,11 @@ export default function Inquiry() {
               heroRef.isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-advibe-dark mb-6 fade-slide">Get Your Free Consultation</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-advibe-dark mb-6 fade-slide">
+              Get Your Free Consultation
+            </h1>
             <p className="text-xl text-advibe-dark/80 leading-relaxed">
-              Take the first step towards transforming your digital presence. Fill out the form below and our experts will get back to you within 24 hours.
+              Take the first step towards transforming your digital presence. Fill out the form below and our experts will get back to you on WhatsApp.
             </p>
           </div>
         </div>
@@ -106,7 +89,9 @@ export default function Inquiry() {
             >
               <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold text-advibe-dark mb-4">Tell Us About Your Project</h2>
-                <p className="text-lg text-advibe-dark/70">The more details you provide, the better we can tailor our solution to your needs.</p>
+                <p className="text-lg text-advibe-dark/70">
+                  The more details you provide, the better we can tailor our solution to your needs.
+                </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-8">
@@ -165,6 +150,7 @@ export default function Inquiry() {
                   </div>
                 </div>
 
+                {/* Plan Interest */}
                 <div>
                   <Label htmlFor="plan-interest">Plan of Interest</Label>
                   <Select onValueChange={handleSelectChange} value={formData.planInterest}>
@@ -176,6 +162,20 @@ export default function Inquiry() {
                       <SelectItem value="gold">Gold Plan - ₹21,000/month</SelectItem>
                       <SelectItem value="diamond">Diamond Plan - ₹36,000/month</SelectItem>
                       <SelectItem value="custom">Custom Solution</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* WhatsApp Number Selection */}
+                <div>
+                  <Label htmlFor="contact-number">Send To *</Label>
+                  <Select onValueChange={setTargetNumber} value={targetNumber}>
+                    <SelectTrigger className="mt-3 py-4 text-lg">
+                      <SelectValue placeholder="Choose a number" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="917574968609">+91 75749 68609</SelectItem>
+                      <SelectItem value="919879002715">+91 98790 02715</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -194,39 +194,16 @@ export default function Inquiry() {
                   />
                 </div>
 
-                <div className="bg-gray-50 p-6 rounded-xl">
-                  <h4 className="font-semibold text-advibe-dark mb-4">What happens next?</h4>
-                  <div className="space-y-3">
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-advibe-pink rounded-full flex items-center justify-center mr-3">
-                        <span className="text-white text-sm font-semibold">1</span>
-                      </div>
-                      <span className="text-advibe-dark/80">We'll review your inquiry within 24 hours</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-advibe-blue rounded-full flex items-center justify-center mr-3">
-                        <span className="text-white text-sm font-semibold">2</span>
-                      </div>
-                      <span className="text-advibe-dark/80">Schedule a free 30-minute consultation call</span>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-advibe-pink rounded-full flex items-center justify-center mr-3">
-                        <span className="text-white text-sm font-semibold">3</span>
-                      </div>
-                      <span className="text-advibe-dark/80">Receive a customized marketing strategy proposal</span>
-                    </div>
-                  </div>
-                </div>
-
                 <div className="text-center">
                   <Button
                     type="submit"
                     className="btn-gradient text-white font-bold text-xl shadow-lg px-12 py-5 rounded-full"
-                    disabled={inquiryMutation.isPending}
                   >
-                    {inquiryMutation.isPending ? "Submitting..." : "Get My Free Consultation"}
+                    Send on WhatsApp
                   </Button>
-                  <p className="text-sm text-advibe-dark/60 mt-4">No spam, no commitment. Just valuable insights for your business.</p>
+                  <p className="text-sm text-advibe-dark/60 mt-4">
+                    You’ll be redirected to WhatsApp with your inquiry details.
+                  </p>
                 </div>
               </form>
             </div>
@@ -234,7 +211,7 @@ export default function Inquiry() {
         </div>
       </section>
 
-      {/* Why Choose Us - Quick Highlights */}
+      {/* Why Choose Us */}
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <div
@@ -244,9 +221,10 @@ export default function Inquiry() {
             }`}
           >
             <h3 className="text-3xl font-bold text-advibe-dark mb-4">Why Businesses Choose Advibe</h3>
-            <p className="text-lg text-advibe-dark/70">Join hundreds of successful businesses who trust us with their digital marketing.</p>
+            <p className="text-lg text-advibe-dark/70">
+              Join hundreds of successful businesses who trust us with their digital marketing.
+            </p>
           </div>
-
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center fade-in">
               <div className="w-16 h-16 service-icon rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -255,7 +233,6 @@ export default function Inquiry() {
               <h4 className="text-xl font-bold text-advibe-dark mb-3">Proven Results</h4>
               <p className="text-advibe-dark/70">Average 300% increase in online engagement within the first 3 months.</p>
             </div>
-
             <div className="text-center fade-in">
               <div className="w-16 h-16 service-icon rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-white" />
@@ -263,7 +240,6 @@ export default function Inquiry() {
               <h4 className="text-xl font-bold text-advibe-dark mb-3">Expert Team</h4>
               <p className="text-advibe-dark/70">Certified marketing professionals with 5+ years of industry experience.</p>
             </div>
-
             <div className="text-center fade-in">
               <div className="w-16 h-16 service-icon rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Headphones className="h-8 w-8 text-white" />
