@@ -63,6 +63,27 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // create WhatsApp message
+    const whatsappMessage = `Hello, my name is ${formData.name}.
+Email: ${formData.email}
+Phone: ${formData.phone}
+Reason: ${formData.reason}
+Message: ${formData.message}`;
+
+    // your WhatsApp number (international format, no + or spaces)
+    const whatsappNumber = "917574968609"; // example: +91 75749 68609 → 917574968609
+
+    // encode message
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // WhatsApp link
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // open WhatsApp in new tab
+    window.open(whatsappLink, "_blank");
+
+    // still send to API for record-keeping
     contactMutation.mutate(formData);
   };
 
