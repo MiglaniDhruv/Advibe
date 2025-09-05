@@ -1,6 +1,19 @@
 import { useParams, Link } from "wouter";
 import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowLeft, ChevronRight } from "lucide-react";
+import CommunityHero from "../assets/CommunityHero.jpg"
+import PurposeMapping from "../assets/PurposeMapping.jpg"
+import AuthenticEngagement from "../assets/AuthenticEngagement.jpg"
+import UGC1 from "../assets/UGC1.jpg"
+import UGC2 from "../assets/UGC2.jpg"
+import UGC3 from "../assets/UGC3.jpg"
+import Rituals from "../assets/Rituals.jpg"
+import Blog2 from "../assets/BLog2.jpg"
+import Blog1 from "../assets/Blog1.jpg"
+import Blog3 from "../assets/Blog3.jpg"
+import Blog4 from "../assets/Blog4.jpg"
+import Blog5 from "../assets/Blog5.jpg"
+import Blog6 from "../assets/Blog6.jpg"
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -130,7 +143,7 @@ export default function BlogDetails() {
 
           <motion.div {...zoomIn()} className="bg-white rounded-3xl shadow-lg overflow-hidden">
             <img
-              src="/src/assets/blogs/social-hero.jpg"
+              src= {CommunityHero}
               alt="Community hero"
               className="w-full h-80 object-cover"
             />
@@ -163,11 +176,11 @@ export default function BlogDetails() {
                     </ul>
                   </Tip>
                 </div>
-                <SectionImage src="/src/assets/blogs/social-purpose.jpg" alt="Purpose mapping" />
+                <SectionImage src= {PurposeMapping} alt="Purpose mapping" />
               </section>
 
               <section className="grid md:grid-cols-2 gap-8 items-center">
-                <SectionImage src="/src/assets/blogs/social-engagement.jpg" alt="Authentic engagement" />
+                <SectionImage src= {AuthenticEngagement} alt="Authentic engagement" />
                 <div className="space-y-4">
                   <h3 className="text-xl font-bold text-advibe-dark">2) Engineer Authentic Engagement</h3>
                   <p className="text-gray-700">
@@ -188,9 +201,9 @@ export default function BlogDetails() {
                   Think prompts, not posts. Carousels with binary choices, duet-friendly Reels, and remixable templates outperform polished monologues.
                 </p>
                 <div className="grid md:grid-cols-3 gap-6">
-                  <SectionImage src="/src/assets/blogs/social-ugc-1.jpg" alt="UGC example 1" />
-                  <SectionImage src="/src/assets/blogs/social-ugc-2.jpg" alt="UGC example 2" />
-                  <SectionImage src="/src/assets/blogs/social-ugc-3.jpg" alt="UGC example 3" />
+                  <SectionImage src= {UGC1} alt="UGC example 1" />
+                  <SectionImage src= {UGC2} alt="UGC example 2" />
+                  <SectionImage src= {UGC3} alt="UGC example 3" />
                 </div>
                 <Tip title="High-engagement post formulas">
                   <ul className="list-disc pl-5 space-y-1">
@@ -213,7 +226,7 @@ export default function BlogDetails() {
                     <li>“Office Hours Friday” for AMAs/live Q&A.</li>
                   </ul>
                 </div>
-                <SectionImage src="/src/assets/blogs/social-rituals.jpg" alt="Rituals" />
+                <SectionImage src= {Rituals} alt="Rituals" />
               </section>
 
               <section className="space-y-4">
@@ -238,8 +251,8 @@ export default function BlogDetails() {
 
               <RelatedPosts
                 list={[
-                  { id: "2", title: "SEO Best Practices for Small Businesses in 2024", image: "/src/assets/blogs/seo-hero.jpg", category: "SEO TIPS", readTime: "12 min read", date: "Mar 12, 2024" },
-                  { id: "3", title: "Email Marketing Automation That Actually Works", image: "/src/assets/blogs/email-hero.jpg", category: "EMAIL MARKETING", readTime: "10 min read", date: "Mar 10, 2024" },
+                  { id: "2", title: "SEO Best Practices for Small Businesses in 2024", image: Blog2, category: "SEO TIPS", readTime: "12 min read", date: "Mar 12, 2024" },
+                  { id: "3", title: "Email Marketing Automation That Actually Works", image: Blog3, category: "EMAIL MARKETING", readTime: "10 min read", date: "Mar 10, 2024" },
                 ]}
               />
             </div>
