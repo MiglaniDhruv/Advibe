@@ -10,6 +10,13 @@ import {
     BarChart3,
     Check,
 } from "lucide-react";
+import SocialMediaManagement from "../assets/SocailMediaManagement.jpg";
+import PerformanceMarketing from "../assets/PerformanceMarketing.jpg";
+import BrandingContentCreation from "../assets/BrandingContentCreation.jpg";
+import WebsiteDevelopmentSEO from "../assets/WebsiteDevelopmentSEO.jpg";
+import StrategyConsulting from "../assets/StrategyConsulting.jpg";
+import DataTracking from "../assets/DataTrackingReporting.jpg";
+import ServiceHero from "../assets/ServiceHero.jpg";
 
 export default function Services() {
     const heroRef = useIntersectionObserver();
@@ -32,7 +39,7 @@ export default function Services() {
                 "Community management and audience engagement",
                 "Hash research and optimization strategies",
             ],
-            image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=800&h=600",
+            image: SocialMediaManagement,
             alt: "Social media marketing dashboard with analytics and engagement metrics",
         },
         {
@@ -51,7 +58,7 @@ export default function Services() {
                 "Conversion tracking and ROI optimization",
                 "A/B testing and performance analysis",
             ],
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=600",
+            image: PerformanceMarketing,
             alt: "Performance marketing analytics dashboard showing ROI and campaign metrics",
         },
         {
@@ -70,7 +77,7 @@ export default function Services() {
                 "Video production and motion graphics",
                 "Brand guidelines and style documentation",
             ],
-            image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=800&h=600",
+            image: BrandingContentCreation,
             alt: "Creative designer working on brand identity and visual content creation",
         },
         {
@@ -89,7 +96,7 @@ export default function Services() {
                 "Mobile-responsive and fast-loading designs",
                 "E-commerce and CMS implementation",
             ],
-            image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&h=600",
+            image: WebsiteDevelopmentSEO,
             alt: "Web developer creating responsive websites with SEO optimization",
         },
         {
@@ -108,7 +115,7 @@ export default function Services() {
                 "Brand positioning and messaging frameworks",
                 "Campaign planning and budget optimization",
             ],
-            image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&h=600",
+            image: StrategyConsulting,
             alt: "Strategic marketing consultation meeting with business experts",
         },
         {
@@ -127,7 +134,7 @@ export default function Services() {
                 "Monthly performance reports and insights",
                 "KPI tracking and goal measurement",
             ],
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=600",
+            image: DataTracking,
             alt: "Analytics dashboard displaying marketing performance data and reporting metrics",
         },
     ];
@@ -135,25 +142,35 @@ export default function Services() {
     return (
         <div>
             {/* Services Hero */}
-            <section className="gradient-bg py-20 pt-32">
-                <div className="container mx-auto px-4">
-                    <div
-                        ref={heroRef.elementRef}
-                        className={`text-center max-w-4xl mx-auto transition-all duration-700 ${
-                            heroRef.isIntersecting
-                                ? "opacity-100 translate-y-0"
-                                : "opacity-0 translate-y-8"
-                        }`}
-                    >
-                        <h1 className="text-4xl md:text-6xl font-bold text-advibe-dark mb-6 fade-slide">
-                            Our Services
-                        </h1>
-                        <p className="text-xl text-advibe-dark/80 leading-relaxed">
-                            Comprehensive digital marketing solutions designed
-                            to elevate your brand, engage your audience, and
-                            drive measurable results.
-                        </p>
-                    </div>
+            <section className="relative w-full h-[70vh] flex items-center justify-center text-center overflow-hidden">
+                {/* Background image */}
+                <div className="absolute inset-0">
+                    <img
+                        src={ServiceHero}
+                        alt="Digital marketing background"
+                        className="w-full h-full object-cover"
+                    />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/50"></div>
+                </div>
+
+                {/* Text content */}
+                <div
+                    ref={heroRef.elementRef}
+                    className={`relative z-10 text-center max-w-4xl mx-auto transition-all duration-700 ${
+                        heroRef.isIntersecting
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-8"
+                    }`}
+                >
+                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 fade-slide">
+                        Our Services
+                    </h1>
+                    <p className="text-xl text-white/90 leading-relaxed">
+                        Comprehensive digital marketing solutions designed to
+                        elevate your brand, engage your audience, and drive
+                        measurable results.
+                    </p>
                 </div>
             </section>
 
@@ -167,7 +184,7 @@ export default function Services() {
                         return (
                             <div
                                 key={service.title}
-                                id={service.id}  // 👈 Each service has its own ID
+                                id={service.id} // 👈 Each service has its own ID
                                 ref={serviceRef.elementRef}
                                 className={`mb-20 transition-all duration-700 ${
                                     serviceRef.isIntersecting

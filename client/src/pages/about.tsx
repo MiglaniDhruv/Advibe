@@ -8,6 +8,11 @@ import ShareIcon from "@/assets/share.svg";
 import SEOIcon from "@/assets/seo.svg";
 import AddsIcon from "@/assets/adds.svg";
 import AnalyticsIcon from "@/assets/analytics.svg";
+import Expertise1 from "../assets/Expertise1.jpg";
+import Expertise2 from "../assets/Expertise2.jpg";
+import Expertise3 from "../assets/Expertise3.jpg";
+import AboutHero from "../assets/AboutHero.jpg";
+import AboutAdvibe from "../assets/AboutAdvibe.jpg"
 
 export default function About() {
   const heroRef = useIntersectionObserver();
@@ -31,17 +36,17 @@ export default function About() {
     {
       title: "Digital Strategy",
       desc: "Crafting tailored strategies that align with your goals and deliver measurable results.",
-      img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80",
+      img: Expertise1
     },
     {
       title: "Creative Design",
       desc: "From brand identity to ad creatives, we make your brand visually unforgettable.",
-      img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+      img: Expertise2
     },
     {
       title: "Performance Marketing",
       desc: "ROI-driven campaigns across search, social, and programmatic platforms.",
-      img: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80",
+      img: Expertise3
     },
   ];
 
@@ -72,7 +77,7 @@ export default function About() {
       <section className="relative w-full h-[70vh] flex items-center justify-center text-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80"
+            src= {AboutHero}
             alt="Digital marketing background"
             className="w-full h-full object-cover"
           />
@@ -121,7 +126,7 @@ export default function About() {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+                src= {AboutAdvibe}
                 alt="Digital Marketing Team"
                 className="rounded-2xl shadow-xl w-full h-[420px] object-cover animate-3d-tilt"
               />

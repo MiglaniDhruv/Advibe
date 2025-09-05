@@ -25,7 +25,6 @@ export default function Hero() {
               Vibe Your Brand.
               <br />
               <span className="gradient-text">Grow Your Reach.<br></br></span>
-              <span className="gradient-text">Amplify Your Reach.</span>
             </h1>
             <p className="text-[clamp(1rem,2vw,1.25rem)] text-advibe-dark/80 mb-8 leading-relaxed max-w-prose ml-20">
               We help brands shine with creative content, targeted ads, and

@@ -1,4 +1,3 @@
-import { Link } from "wouter";
 import {
   Facebook,
   Instagram,
@@ -14,14 +13,14 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-br from-[#0a0a0a] via-[#111827] to-[#0a0a0a] text-white py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-4 gap-10">
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6">
               <img
                 src={advibeLogoPath}
                 alt="Advibe Digital Marketing Agency Logo"
-                className="w-24 h-24 rounded-full object-cover"
+                className="w-20 h-20 rounded-full object-cover shadow-lg"
               />
             </div>
             <p className="text-gray-300 leading-relaxed mb-6">
@@ -30,26 +29,34 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
-                className="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center hover:bg-advibe-blue transition-all"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center hover:bg-advibe-blue hover:scale-105 transition-all"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center hover:bg-advibe-blue transition-all"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center hover:bg-advibe-blue hover:scale-105 transition-all"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center hover:bg-advibe-blue transition-all"
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center hover:bg-advibe-blue hover:scale-105 transition-all"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center hover:bg-advibe-blue transition-all"
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-advibe-pink rounded-lg flex items-center justify-center hover:bg-advibe-blue hover:scale-105 transition-all"
               >
                 <Twitter className="h-5 w-5" />
               </a>
@@ -60,54 +67,12 @@ export default function Footer() {
           <div>
             <h4 className="text-xl font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/"
-                  className="text-gray-300 hover:text-advibe-pink transition-all"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="text-gray-300 hover:text-advibe-pink transition-all"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-gray-300 hover:text-advibe-pink transition-all"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/plans"
-                  className="text-gray-300 hover:text-advibe-pink transition-all"
-                >
-                  Plans & Pricing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-gray-300 hover:text-advibe-pink transition-all"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-gray-300 hover:text-advibe-pink transition-all"
-                >
-                  Contact
-                </Link>
-              </li>
+              <li><a href="/" className="footer-link">Home</a></li>
+              <li><a href="/about" className="footer-link">About Us</a></li>
+              <li><a href="/services" className="footer-link">Services</a></li>
+              <li><a href="/plans" className="footer-link">Plans & Pricing</a></li>
+              <li><a href="/blog" className="footer-link">Blog</a></li>
+              <li><a href="/contact" className="footer-link">Contact</a></li>
             </ul>
           </div>
 
@@ -115,61 +80,19 @@ export default function Footer() {
           <div>
             <h4 className="text-xl font-semibold mb-6">Our Services</h4>
             <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/services#social-media-management"
-                  className="text-gray-300 hover:text-advibe-pink transition-all"
-                >
-                  Social Media Management
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services#performance-marketing"
-                  className="text-gray-300 hover:text-advibe-pink transition-all"
-                >
-                  Performance Marketing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services#branding-content"
-                  className="text-gray-300 hover:text-advibe-pink transition-all"
-                >
-                  Branding & Content Creation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services#website-seo"
-                  className="text-gray-300 hover:text-advibe-pink transition-all"
-                >
-                  Website Development & SEO
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services#strategy-consulting"
-                  className="text-gray-300 hover:text-advibe-pink transition-all"
-                >
-                  Strategy & Consulting
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services#data-reporting"
-                  className="text-gray-300 hover:text-advibe-pink transition-all"
-                >
-                  Data Tracking & Reporting
-                </Link>
-              </li>
+              <li><a href="/services#social-media-management" className="footer-link">Social Media Management</a></li>
+              <li><a href="/services#performance-marketing" className="footer-link">Performance Marketing</a></li>
+              <li><a href="/services#branding-content" className="footer-link">Branding & Content Creation</a></li>
+              <li><a href="/services#website-seo" className="footer-link">Website Development & SEO</a></li>
+              <li><a href="/services#strategy-consulting" className="footer-link">Strategy & Consulting</a></li>
+              <li><a href="/services#data-tracking" className="footer-link">Data Tracking & Reporting</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
             <h4 className="text-xl font-semibold mb-6">Contact Info</h4>
-            <div className="space-y-4">
+            <div className="space-y-4 text-sm">
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-advibe-pink" />
                 <span className="text-gray-300">+91 75749 68609</span>
@@ -194,34 +117,24 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Divider */}
         <hr className="border-gray-700 my-12" />
 
+        {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 mb-4 md:mb-0">
-            © 2025 Advibe. All rights reserved.
+            © {new Date().getFullYear()} Advibe. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a
-              href="#"
-              className="text-gray-400 hover:text-advibe-pink transition-all"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-advibe-pink transition-all"
-            >
-              Terms of Service
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-advibe-pink transition-all"
-            >
-              Cookie Policy
-            </a>
+            <a href="/privacy" className="footer-link">Privacy Policy</a>
+            <a href="/terms" className="footer-link">Terms of Service</a>
+            <a href="/cookies" className="footer-link">Cookie Policy</a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+
+// ✅ Add a shared class for links (keeps code clean)
+const linkClass = "text-gray-300 hover:text-advibe-pink transition-all duration-300 hover:translate-x-1";
