@@ -1,23 +1,32 @@
 import { Link } from "wouter";
-import { Facebook, Instagram, Linkedin, Twitter, Phone, Mail, MapPin } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
+  Phone,
+  Mail,
+  MapPin,
+} from "lucide-react";
 import advibeLogoPath from "@assets/WhatsApp Image 2025-07-29 at 12.52.24_cd622bf7_1754653488876.jpg";
 
 export default function Footer() {
   return (
-    <footer className="bg-advibe-dark text-white py-16">
+    <footer className="bg-gradient-to-br from-[#0a0a0a] via-[#111827] to-[#0a0a0a] text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-6">
-              <img 
-                src={advibeLogoPath} 
-                alt="Advibe Digital Marketing Agency Logo" 
+              <img
+                src={advibeLogoPath}
+                alt="Advibe Digital Marketing Agency Logo"
                 className="w-24 h-24 rounded-full object-cover"
               />
             </div>
             <p className="text-gray-300 leading-relaxed mb-6">
-              Transform your brand with creative digital marketing solutions that drive real results and sustainable growth.
+              Transform your brand with creative digital marketing solutions
+              that drive real results and sustainable growth.
             </p>
             <div className="flex space-x-4">
               <a
@@ -52,32 +61,50 @@ export default function Footer() {
             <h4 className="text-xl font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-advibe-pink transition-all">
+                <Link
+                  href="/"
+                  className="text-gray-300 hover:text-advibe-pink transition-all"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-advibe-pink transition-all">
+                <Link
+                  href="/about"
+                  className="text-gray-300 hover:text-advibe-pink transition-all"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-advibe-pink transition-all">
+                <Link
+                  href="/services"
+                  className="text-gray-300 hover:text-advibe-pink transition-all"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/plans" className="text-gray-300 hover:text-advibe-pink transition-all">
+                <Link
+                  href="/plans"
+                  className="text-gray-300 hover:text-advibe-pink transition-all"
+                >
                   Plans & Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-300 hover:text-advibe-pink transition-all">
+                <Link
+                  href="/blog"
+                  className="text-gray-300 hover:text-advibe-pink transition-all"
+                >
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-advibe-pink transition-all">
+                <Link
+                  href="/contact"
+                  className="text-gray-300 hover:text-advibe-pink transition-all"
+                >
                   Contact
                 </Link>
               </li>
@@ -89,22 +116,52 @@ export default function Footer() {
             <h4 className="text-xl font-semibold mb-6">Our Services</h4>
             <ul className="space-y-3">
               <li>
-                <span className="text-gray-300">Social Media Management</span>
+                <Link
+                  href="/services#social-media-management"
+                  className="text-gray-300 hover:text-advibe-pink transition-all"
+                >
+                  Social Media Management
+                </Link>
               </li>
               <li>
-                <span className="text-gray-300">Performance Marketing</span>
+                <Link
+                  href="/services#performance-marketing"
+                  className="text-gray-300 hover:text-advibe-pink transition-all"
+                >
+                  Performance Marketing
+                </Link>
               </li>
               <li>
-                <span className="text-gray-300">Branding & Content Creation</span>
+                <Link
+                  href="/services#branding-content"
+                  className="text-gray-300 hover:text-advibe-pink transition-all"
+                >
+                  Branding & Content Creation
+                </Link>
               </li>
               <li>
-                <span className="text-gray-300">Website Development & SEO</span>
+                <Link
+                  href="/services#website-seo"
+                  className="text-gray-300 hover:text-advibe-pink transition-all"
+                >
+                  Website Development & SEO
+                </Link>
               </li>
               <li>
-                <span className="text-gray-300">Strategy & Consulting</span>
+                <Link
+                  href="/services#strategy-consulting"
+                  className="text-gray-300 hover:text-advibe-pink transition-all"
+                >
+                  Strategy & Consulting
+                </Link>
               </li>
               <li>
-                <span className="text-gray-300">Data Tracking & Reporting</span>
+                <Link
+                  href="/services#data-reporting"
+                  className="text-gray-300 hover:text-advibe-pink transition-all"
+                >
+                  Data Tracking & Reporting
+                </Link>
               </li>
             </ul>
           </div>
@@ -140,15 +197,26 @@ export default function Footer() {
         <hr className="border-gray-700 my-12" />
 
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 mb-4 md:mb-0">© 2025 Advibe. All rights reserved.</p>
+          <p className="text-gray-400 mb-4 md:mb-0">
+            © 2025 Advibe. All rights reserved.
+          </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-advibe-pink transition-all">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-advibe-pink transition-all"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-400 hover:text-advibe-pink transition-all">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-advibe-pink transition-all"
+            >
               Terms of Service
             </a>
-            <a href="#" className="text-gray-400 hover:text-advibe-pink transition-all">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-advibe-pink transition-all"
+            >
               Cookie Policy
             </a>
           </div>

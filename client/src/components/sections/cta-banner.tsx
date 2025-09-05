@@ -6,7 +6,7 @@ export default function CTABanner() {
   const { elementRef, isIntersecting } = useIntersectionObserver();
 
   return (
-    <section className="gradient-bg py-20">
+    <section className="relative gradient-bg py-20 bg-white z-20">
       <div className="container mx-auto px-4">
         <div
           ref={elementRef}
@@ -27,7 +27,10 @@ export default function CTABanner() {
               </Button>
             </Link>
             <Link href="/contact">
-              <Button variant="outline" className="border-2 border-advibe-dark text-advibe-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-advibe-dark hover:text-white transition-all">
+              <Button
+                variant="outline"
+                className="border-2 border-advibe-dark text-advibe-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-advibe-dark hover:text-white transition-all"
+              >
                 Contact Us
               </Button>
             </Link>

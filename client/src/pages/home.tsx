@@ -24,12 +24,14 @@ export default function Home() {
     };
 
     return (
-        <div>
-            {/* Hero Section */}
-            <Hero />
+        <div className="relative">
+            {/* Sticky Hero Section */}
+            <section className="sticky top-0 h-screen">
+                <Hero />
+            </section>
 
             {/* About Advibe Preview */}
-            <section className="py-16 md:py-20 bg-gray-50">
+            <section className="relative py-16 md:py-20 bg-gray-50">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         variants={fadeUp}

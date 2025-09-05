@@ -39,7 +39,7 @@ const scrollingTestimonials = [...testimonials, ...testimonials];
 
 export default function Testimonials() {
   return (
-    <section className="py-16 overflow-hidden">
+    <section className="relative py-16 overflow-hidden bg-white z-20">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">

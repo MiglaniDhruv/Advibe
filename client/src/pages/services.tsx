@@ -17,6 +17,7 @@ export default function Services() {
 
     const services = [
         {
+            id: "social-media-management",
             icon: (
                 <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB] card-shimmer">
                     <Hash className="text-white text-2xl" />
@@ -31,10 +32,11 @@ export default function Services() {
                 "Community management and audience engagement",
                 "Hash research and optimization strategies",
             ],
-            image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+            image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=800&h=600",
             alt: "Social media marketing dashboard with analytics and engagement metrics",
         },
         {
+            id: "performance-marketing",
             icon: (
                 <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB] card-shimmer">
                     <TrendingUp className="text-white text-2xl" />
@@ -49,10 +51,11 @@ export default function Services() {
                 "Conversion tracking and ROI optimization",
                 "A/B testing and performance analysis",
             ],
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=600",
             alt: "Performance marketing analytics dashboard showing ROI and campaign metrics",
         },
         {
+            id: "branding-content",
             icon: (
                 <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB] card-shimmer">
                     <Palette className="text-white text-2xl" />
@@ -67,10 +70,11 @@ export default function Services() {
                 "Video production and motion graphics",
                 "Brand guidelines and style documentation",
             ],
-            image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+            image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=800&h=600",
             alt: "Creative designer working on brand identity and visual content creation",
         },
         {
+            id: "website-seo",
             icon: (
                 <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB] card-shimmer">
                     <Code className="text-white text-2xl" />
@@ -85,10 +89,11 @@ export default function Services() {
                 "Mobile-responsive and fast-loading designs",
                 "E-commerce and CMS implementation",
             ],
-            image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+            image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&h=600",
             alt: "Web developer creating responsive websites with SEO optimization",
         },
         {
+            id: "strategy-consulting",
             icon: (
                 <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB] card-shimmer">
                     <Lightbulb className="text-white text-2xl" />
@@ -103,10 +108,11 @@ export default function Services() {
                 "Brand positioning and messaging frameworks",
                 "Campaign planning and budget optimization",
             ],
-            image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+            image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&h=600",
             alt: "Strategic marketing consultation meeting with business experts",
         },
         {
+            id: "data-tracking",
             icon: (
                 <div className="w-full h-full flex items-center justify-center rounded-lg bg-gradient-to-r from-[#8CCCEC] to-[#DF98BB] card-shimmer">
                     <BarChart3 className="text-white text-2xl" />
@@ -121,7 +127,7 @@ export default function Services() {
                 "Monthly performance reports and insights",
                 "KPI tracking and goal measurement",
             ],
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=600",
             alt: "Analytics dashboard displaying marketing performance data and reporting metrics",
         },
     ];
@@ -161,6 +167,7 @@ export default function Services() {
                         return (
                             <div
                                 key={service.title}
+                                id={service.id}  // 👈 Each service has its own ID
                                 ref={serviceRef.elementRef}
                                 className={`mb-20 transition-all duration-700 ${
                                     serviceRef.isIntersecting
@@ -217,13 +224,12 @@ export default function Services() {
                                         </Link>
                                     </div>
                                     <div className="relative overflow-hidden rounded-2xl shadow-lg group">
-  <img
-    src={service.image}
-    alt={service.alt}
-    className="w-full h-auto transform transition-transform duration-500 group-hover:scale-110"
-  />
-</div>
-
+                                        <img
+                                            src={service.image}
+                                            alt={service.alt}
+                                            className="w-full h-auto transform transition-transform duration-500 group-hover:scale-110"
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         );
