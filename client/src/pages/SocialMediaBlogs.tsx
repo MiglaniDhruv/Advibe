@@ -362,8 +362,8 @@ export default function BlogDetails() {
 
               <RelatedPosts
                 list={[
-                  { id: "1", title: "How to Build an Engaged Social Media Community", image: "/src/assets/blogs/social-hero.jpg", category: "SOCIAL MEDIA", readTime: "10 min read", date: "Mar 15, 2024" },
-                  { id: "4", title: "Creating Content That Converts: A Step-by-Step Guide", image: "/src/assets/blogs/content-hero.jpg", category: "CONTENT STRATEGY", readTime: "12 min read", date: "Mar 8, 2024" },
+                  { id: "1", title: "How to Build an Engaged Social Media Community", image: Blog1, category: "SOCIAL MEDIA", readTime: "10 min read", date: "Mar 15, 2024" },
+                  { id: "4", title: "Creating Content That Converts: A Step-by-Step Guide", image: Blog4, category: "CONTENT STRATEGY", readTime: "12 min read", date: "Mar 8, 2024" },
                 ]}
               />
             </div>
@@ -457,8 +457,8 @@ export default function BlogDetails() {
 
               <RelatedPosts
                 list={[
-                  { id: "4", title: "Creating Content That Converts: A Step-by-Step Guide", image: "/src/assets/blogs/content-hero.jpg", category: "CONTENT STRATEGY", readTime: "12 min read", date: "Mar 8, 2024" },
-                  { id: "5", title: "Maximizing ROI from Google Ads: Advanced Strategies", image: "/src/assets/blogs/ppc-hero.jpg", category: "PPC ADVERTISING", readTime: "14 min read", date: "Mar 5, 2024" },
+                  { id: "4", title: "Creating Content That Converts: A Step-by-Step Guide", image: Blog4, category: "CONTENT STRATEGY", readTime: "12 min read", date: "Mar 8, 2024" },
+                  { id: "5", title: "Maximizing ROI from Google Ads: Advanced Strategies", image: Blog5, category: "PPC ADVERTISING", readTime: "14 min read", date: "Mar 5, 2024" },
                 ]}
               />
             </div>
@@ -536,8 +536,8 @@ export default function BlogDetails() {
 
               <RelatedPosts
                 list={[
-                  { id: "2", title: "SEO Best Practices for Small Businesses in 2024", image: "/src/assets/blogs/seo-hero.jpg", category: "SEO TIPS", readTime: "12 min read", date: "Mar 12, 2024" },
-                  { id: "6", title: "Building a Brand Identity That Stands Out", image: "/src/assets/blogs/branding-hero.jpg", category: "BRANDING", readTime: "10 min read", date: "Mar 3, 2024" },
+                  { id: "2", title: "SEO Best Practices for Small Businesses in 2024", image: Blog2, category: "SEO TIPS", readTime: "12 min read", date: "Mar 12, 2024" },
+                  { id: "6", title: "Building a Brand Identity That Stands Out", image: Blog6, category: "BRANDING", readTime: "10 min read", date: "Mar 3, 2024" },
                 ]}
               />
             </div>
@@ -612,8 +612,8 @@ export default function BlogDetails() {
 
               <RelatedPosts
                 list={[
-                  { id: "2", title: "SEO Best Practices for Small Businesses in 2024", image: "/src/assets/blogs/seo-hero.jpg", category: "SEO TIPS", readTime: "12 min read", date: "Mar 12, 2024" },
-                  { id: "3", title: "Email Marketing Automation That Actually Works", image: "/src/assets/blogs/email-hero.jpg", category: "EMAIL MARKETING", readTime: "10 min read", date: "Mar 10, 2024" },
+                  { id: "2", title: "SEO Best Practices for Small Businesses in 2024", image: Blog2, category: "SEO TIPS", readTime: "12 min read", date: "Mar 12, 2024" },
+                  { id: "3", title: "Email Marketing Automation That Actually Works", image: Blog3, category: "EMAIL MARKETING", readTime: "10 min read", date: "Mar 10, 2024" },
                 ]}
               />
             </div>
@@ -686,8 +686,8 @@ export default function BlogDetails() {
 
               <RelatedPosts
                 list={[
-                  { id: "4", title: "Creating Content That Converts: A Step-by-Step Guide", image: "/src/assets/blogs/content-hero.jpg", category: "CONTENT STRATEGY", readTime: "12 min read", date: "Mar 8, 2024" },
-                  { id: "1", title: "How to Build an Engaged Social Media Community", image: "/src/assets/blogs/social-hero.jpg", category: "SOCIAL MEDIA", readTime: "10 min read", date: "Mar 15, 2024" },
+                  { id: "4", title: "Creating Content That Converts: A Step-by-Step Guide", image: Blog4, category: "CONTENT STRATEGY", readTime: "12 min read", date: "Mar 8, 2024" },
+                  { id: "1", title: "How to Build an Engaged Social Media Community", image: Blog1, category: "SOCIAL MEDIA", readTime: "10 min read", date: "Mar 15, 2024" },
                 ]}
               />
             </div>
