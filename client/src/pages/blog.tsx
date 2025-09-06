@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import BlogsHero from "../assets/BlogsHero.jpg";
 
 export default function Blog() {
     const heroRef = useIntersectionObserver();
@@ -100,24 +101,21 @@ export default function Blog() {
     return (
         <div>
             {/* Blog Hero */}
-            <section className="gradient-bg py-20 pt-32">
-                <div className="container mx-auto px-4">
-                    <div
-                        ref={heroRef.elementRef}
-                        className={`text-center max-w-4xl mx-auto transition-all duration-700 ${
-                            heroRef.isIntersecting
-                                ? "opacity-100 translate-y-0"
-                                : "opacity-0 translate-y-8"
-                        }`}
-                    >
-                        <h1 className="text-4xl md:text-6xl font-bold text-advibe-dark mb-6 fade-slide">
-                            Marketing Insights
-                        </h1>
-                        <p className="text-xl text-advibe-dark/80 leading-relaxed">
-                            Stay ahead of the curve with our latest marketing
-                            tips, industry trends, and success stories.
-                        </p>
-                    </div>
+            <section
+                className="relative h-[60vh] md:h-[75vh] flex items-center justify-center bg-cover bg-center"
+                style={{ backgroundImage: `url(${BlogsHero})` }}
+            >
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/50"></div>
+
+                <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                        Marketing Insights
+                    </h1>
+                    <p className="text-xl text-gray-200 leading-relaxed">
+                        Stay ahead of the curve with our latest marketing tips,
+                        industry trends, and success stories.
+                    </p>
                 </div>
             </section>
 
