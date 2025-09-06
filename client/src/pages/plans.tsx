@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { Check, X } from "lucide-react";
 import PlansHero from "../assets/PlansHero.jpg";
+import PlansBg from "../assets/Blue Pink Gradient Kindness Day Flyer.svg"
 
 export default function Plans() {
     const heroRef = useIntersectionObserver();
@@ -163,7 +164,7 @@ export default function Plans() {
                                         : ""
                                 }`}
                                 style={{
-                                    backgroundImage: `url("/src/assets/Blue Pink Gradient Kindness Day Flyer.svg")`,
+                                    backgroundImage: `url(${PlansHero})`,
                                     backgroundSize: "cover",
                                     backgroundPosition: "cover",
                                 }}
