@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { TrendingUp, Users, Headphones } from "lucide-react";
 import ConsultationHero from "../assets/ConsultationHero.jpg"
+import { motion } from "framer-motion";
 
 export default function Inquiry() {
   const heroRef = useIntersectionObserver();
@@ -212,44 +213,59 @@ export default function Inquiry() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4">
-          <div
-            ref={benefitsRef.elementRef}
-            className={`text-center mb-12 transition-all duration-700 ${
-              benefitsRef.isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <h3 className="text-3xl font-bold text-advibe-dark mb-4">Why Businesses Choose Advibe</h3>
-            <p className="text-lg text-advibe-dark/70">
-              Join hundreds of successful businesses who trust us with their digital marketing.
-            </p>
+<section className="bg-gray-50 py-16">
+  <div className="container mx-auto px-4">
+    {/* Section Header */}
+    <motion.div
+      ref={benefitsRef.elementRef}
+      initial={{ opacity: 0, y: 20 }}
+      animate={benefitsRef.isIntersecting ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
+      className="text-center mb-12"
+    >
+      <h3 className="text-3xl font-bold text-advibe-dark mb-4">Why Businesses Choose Advibe</h3>
+      <p className="text-lg text-advibe-dark/70">
+        Join hundreds of successful businesses who trust us with their digital marketing.
+      </p>
+    </motion.div>
+
+    {/* Benefit Cards */}
+    <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      {[
+        {
+          icon: <TrendingUp className="h-8 w-8 text-white" />,
+          title: "Proven Results",
+          description: "Average 80% increase in online engagement within the first 3 months.",
+        },
+        {
+          icon: <Users className="h-8 w-8 text-white" />,
+          title: "Expert Team",
+          description: "Certified marketing professionals with 5+ years of industry experience.",
+        },
+        {
+          icon: <Headphones className="h-8 w-8 text-white" />,
+          title: "24/7 Support",
+          description: "Dedicated account managers and round-the-clock support for your success.",
+        },
+      ].map((benefit, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={benefitsRef.isIntersecting ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: index * 0.2 }}
+          className="text-center"
+        >
+          <div className="w-16 h-16 bg-advibe-pink rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+            {benefit.icon}
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center fade-in">
-              <div className="w-16 h-16 service-icon rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="h-8 w-8 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-advibe-dark mb-3">Proven Results</h4>
-              <p className="text-advibe-dark/70">Average 300% increase in online engagement within the first 3 months.</p>
-            </div>
-            <div className="text-center fade-in">
-              <div className="w-16 h-16 service-icon rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-advibe-dark mb-3">Expert Team</h4>
-              <p className="text-advibe-dark/70">Certified marketing professionals with 5+ years of industry experience.</p>
-            </div>
-            <div className="text-center fade-in">
-              <div className="w-16 h-16 service-icon rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Headphones className="h-8 w-8 text-white" />
-              </div>
-              <h4 className="text-xl font-bold text-advibe-dark mb-3">24/7 Support</h4>
-              <p className="text-advibe-dark/70">Dedicated account managers and round-the-clock support for your success.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+          <h4 className="text-xl font-bold text-advibe-dark mb-3">{benefit.title}</h4>
+          <p className="text-advibe-dark/70">{benefit.description}</p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
     </div>
   );
 }
