@@ -14,6 +14,26 @@ import Blog3 from "../assets/Blog3.jpg"
 import Blog4 from "../assets/Blog4.jpg"
 import Blog5 from "../assets/Blog5.jpg"
 import Blog6 from "../assets/Blog6.jpg"
+import SEO1 from "../assets/SEO1.jpg"
+import LocalMap from "../assets/LocalMap.jpg"
+import CoreWebVitals from "../assets/CoreWebVitals.jpg"
+import Cluster1 from "../assets/Cluster1.jpg"
+import Cluster2 from "../assets/Cluster2.jpg"
+import Cluster3 from "../assets/Cluster3.jpg"
+import FAQ from "../assets/FAQ.jpg"
+import CopyWriting from "../assets/CopyWriting.jpg"
+import EmailAutomation from "../assets/EmailAutomation.jpg"
+import BehaviorTriggers from "../assets/BehaviorTriggers.jpg"
+import WelcomeFlow from "../assets/WelcomeFlow.jpg"
+import BrandingHero from "../assets/BrandingHero.jpg"
+import Visuals from "../assets/Visuals.jpg"
+import Values from "../assets/Values.jpg"
+import Structure from "../assets/Structure.jpg"
+import Research from "../assets/Research.jpg" 
+import Content from "../assets/Content.png"
+import PPC from "../assets/PPC.jpg"
+import Audience from "../assets/Audience.jpg"
+import Bidding from "../assets/Bidding.jpg"
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -286,7 +306,11 @@ export default function BlogDetails() {
           </Link>
 
           <motion.div {...zoomIn()} className="bg-white rounded-3xl shadow-lg overflow-hidden">
-            <img src="/src/assets/blogs/seo-hero.jpg" alt="SEO" className="w-full h-80 object-cover" />
+            <img
+              src= {SEO1}
+              alt="SEO"
+              className="w-full h-80 object-cover"
+            />
             <div className="p-6 md:p-10 space-y-12">
               <section className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
@@ -301,11 +325,11 @@ export default function BlogDetails() {
                     <li>Reply to every review within 48 hours.</li>
                   </ul>
                 </div>
-                <SectionImage src="/src/assets/blogs/local-seo-map.jpg" alt="Local map" />
+                <SectionImage src= {LocalMap} alt="Local map" />
               </section>
 
               <section className="grid md:grid-cols-2 gap-8 items-center">
-                <SectionImage src="/src/assets/blogs/seo-core-web-vitals.jpg" alt="Core Web Vitals" />
+                <SectionImage src= {CoreWebVitals}  alt="Core Web Vitals" />
                 <div>
                   <h3 className="text-xl font-bold text-advibe-dark">2) Speed + UX = Rankings</h3>
                   <p className="text-gray-700">
@@ -329,9 +353,9 @@ export default function BlogDetails() {
                   This clarifies topical authority for search engines and visitors.
                 </p>
                 <div className="grid md:grid-cols-3 gap-6">
-                  <SectionImage src="/src/assets/blogs/seo-cluster-1.jpg" alt="Cluster 1" />
-                  <SectionImage src="/src/assets/blogs/seo-cluster-2.jpg" alt="Cluster 2" />
-                  <SectionImage src="/src/assets/blogs/seo-cluster-3.jpg" alt="Cluster 3" />
+                  <SectionImage src={Cluster1} alt="Cluster 1" />
+                  <SectionImage src={Cluster2} alt="Cluster 2" />
+                  <SectionImage src={Cluster3} alt="Cluster 3" />
                 </div>
               </section>
 
@@ -344,7 +368,7 @@ export default function BlogDetails() {
                   </p>
                   <Quote>“If your content is skimmable by humans, it’s parsable by search engines.”</Quote>
                 </div>
-                <SectionImage src="/src/assets/blogs/seo-faq.jpg" alt="FAQ" />
+                <SectionImage src={FAQ} alt="FAQ" />
               </section>
 
               <section className="space-y-4">
@@ -397,7 +421,12 @@ export default function BlogDetails() {
           </Link>
 
           <motion.div {...zoomIn()} className="bg-white rounded-3xl shadow-lg overflow-hidden">
-            <img src="/src/assets/blogs/email-hero.jpg" alt="Email automation" className="w-full h-80 object-cover" />
+                        <img
+              src= {EmailAutomation}
+              alt="Email Automation"
+              className="w-full h-auto object-cover"
+            />
+
             <div className="p-6 md:p-10 space-y-12">
               <section className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
@@ -414,11 +443,11 @@ export default function BlogDetails() {
                     </ul>
                   </Tip>
                 </div>
-                <SectionImage src="/src/assets/blogs/email-welcome.jpg" alt="Welcome flow" />
+                <SectionImage src={WelcomeFlow} alt="Welcome flow" />
               </section>
 
               <section className="grid md:grid-cols-2 gap-8 items-center">
-                <SectionImage src="/src/assets/blogs/email-behavior.jpg" alt="Behavior triggers" />
+                <SectionImage src={BehaviorTriggers} alt="Behavior triggers" />
                 <div>
                   <h3 className="text-xl font-bold text-advibe-dark">2) Behavior-Based Triggers</h3>
                   <p className="text-gray-700">
@@ -452,7 +481,7 @@ export default function BlogDetails() {
                   </p>
                   <Quote>“Write like a helpful friend, not a brochure.”</Quote>
                 </div>
-                <SectionImage src="/src/assets/blogs/email-copy.jpg" alt="Copywriting" />
+                <SectionImage src={CopyWriting} alt="Copywriting" />
               </section>
 
               <RelatedPosts
@@ -492,7 +521,11 @@ export default function BlogDetails() {
           </Link>
 
           <motion.div {...zoomIn()} className="bg-white rounded-3xl shadow-lg overflow-hidden">
-            <img src="/src/assets/blogs/content-hero.jpg" alt="Content" className="w-full h-80 object-cover" />
+            <img
+              src= {Content}
+              alt="Content"
+              className="w-full h-auto object-cover"
+            />
             <div className="p-6 md:p-10 space-y-12">
               <section className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
@@ -509,11 +542,11 @@ export default function BlogDetails() {
                     </ul>
                   </Tip>
                 </div>
-                <SectionImage src="/src/assets/blogs/content-research.jpg" alt="Research" />
+                <SectionImage src={Research}  alt="Research" />
               </section>
 
               <section className="grid md:grid-cols-2 gap-8 items-center">
-                <SectionImage src="/src/assets/blogs/content-structure.jpg" alt="Structure" />
+                <SectionImage src={Structure} alt="Structure" />
                 <div>
                   <h3 className="text-xl font-bold text-advibe-dark">2) Structure for Skimmers</h3>
                   <p className="text-gray-700">
@@ -571,7 +604,11 @@ export default function BlogDetails() {
           </Link>
 
           <motion.div {...zoomIn()} className="bg-white rounded-3xl shadow-lg overflow-hidden">
-            <img src="/src/assets/blogs/ppc-hero.jpg" alt="PPC" className="w-full h-80 object-cover" />
+            <img
+              src= {PPC}
+              alt="PPC"
+              className="w-full h-auto object-cover"
+            />
             <div className="p-6 md:p-10 space-y-12">
               <section className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
@@ -585,11 +622,11 @@ export default function BlogDetails() {
                     <li>Use negative keyword sculpting</li>
                   </ul>
                 </div>
-                <SectionImage src="/src/assets/blogs/ppc-bidding.jpg" alt="Bidding" />
+                <SectionImage src={Bidding} alt="Bidding" />
               </section>
 
               <section className="grid md:grid-cols-2 gap-8 items-center">
-                <SectionImage src="/src/assets/blogs/ppc-audience.jpg" alt="Audience" />
+                <SectionImage src={Audience} alt="Audience" />
                 <div>
                   <h3 className="text-xl font-bold text-advibe-dark">2) Audience Layering</h3>
                   <p className="text-gray-700">
@@ -647,7 +684,11 @@ export default function BlogDetails() {
           </Link>
 
           <motion.div {...zoomIn()} className="bg-white rounded-3xl shadow-lg overflow-hidden">
-            <img src="/src/assets/blogs/branding-hero.jpg" alt="Branding" className="w-full h-80 object-cover" />
+            <img
+              src= {BrandingHero}
+              alt="Branding hero"
+              className="w-full h-auto object-cover"
+            />
             <div className="p-6 md:p-10 space-y-12">
               <section className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
@@ -659,11 +700,11 @@ export default function BlogDetails() {
                     <p><span className="font-semibold">We help</span> [who] <span className="font-semibold">achieve</span> [outcome] <span className="font-semibold">by</span> [how], <span className="font-semibold">so they can</span> [benefit].</p>
                   </Tip>
                 </div>
-                <SectionImage src="/src/assets/blogs/branding-values.jpg" alt="Values" />
+                <SectionImage src={Values} alt="Values" />
               </section>
 
               <section className="grid md:grid-cols-2 gap-8 items-center">
-                <SectionImage src="/src/assets/blogs/branding-visuals.jpg" alt="Visuals" />
+                <SectionImage src={Visuals} alt="Visuals" />
                 <div>
                   <h3 className="text-xl font-bold text-advibe-dark">2) Consistency Compounds</h3>
                   <p className="text-gray-700">
