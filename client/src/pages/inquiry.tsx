@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 import { TrendingUp, Users, Headphones } from "lucide-react";
+import ConsultationHero from "../assets/ConsultationHero.jpg"
 
 export default function Inquiry() {
   const heroRef = useIntersectionObserver();
@@ -59,24 +60,23 @@ export default function Inquiry() {
   return (
     <div>
       {/* Inquiry Hero */}
-      <section className="gradient-bg py-20 pt-32">
-        <div className="container mx-auto px-4">
-          <div
-            ref={heroRef.elementRef}
-            className={`text-center max-w-4xl mx-auto transition-all duration-700 ${
-              heroRef.isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <h1 className="text-4xl md:text-6xl font-bold text-advibe-dark mb-6 fade-slide">
-              Get Your Free Consultation
-            </h1>
-            <p className="text-xl text-advibe-dark/80 leading-relaxed">
-              Take the first step towards transforming your digital presence. Fill out the form below and our experts will get back to you on WhatsApp.
-            </p>
-          </div>
-        </div>
-      </section>
+      <section
+                className="relative h-[60vh] md:h-[75vh] flex items-center justify-center bg-cover bg-center"
+                style={{ backgroundImage: `url(${ConsultationHero})` }}
+            >
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/50"></div>
 
+                <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                        Get Your Free Consultation
+                    </h1>
+                    <p className="text-xl text-gray-200 leading-relaxed">
+                        Take the first step towards transforming your digital presence. Fill out the form below and our experts will get back to you on WhatsApp.
+                    </p>
+                </div>
+            </section>
+      
       {/* Inquiry Form */}
       <section className="py-20">
         <div className="container mx-auto px-4">
