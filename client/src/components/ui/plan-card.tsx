@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Check } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
-
+import PlansBg from "../../assets/Blue Pink Gradient Kindness Day Flyer.svg"
 interface PlanCardProps {
   name: string;
   price: string;
@@ -33,7 +33,7 @@ export default function PlanCard({
       }`}
       style={{
         transitionDelay: `${delay}ms`,
-        backgroundImage: `url("/src/assets/Blue Pink Gradient Kindness Day Flyer.svg")`,
+        backgroundImage: `url(${PlansBg})`,
         backgroundSize: "cover",
         backgroundPosition: "cover",
       }}

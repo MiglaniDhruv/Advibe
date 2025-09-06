@@ -164,7 +164,7 @@ export default function Plans() {
                                         : ""
                                 }`}
                                 style={{
-                                    backgroundImage: `url(${PlansHero})`,
+                                    backgroundImage: `url(${PlansBg})`,
                                     backgroundSize: "cover",
                                     backgroundPosition: "cover",
                                 }}
